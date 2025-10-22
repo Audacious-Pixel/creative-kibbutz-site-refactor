@@ -1,5 +1,7 @@
 {
     "siteName": "Creative Kibbutz",
+    "pageModes": ["single", "pages"],
+    "pageMode": "single",
     "contact": {
         "email": "contact@creativekibbutz.com",
         "phone": "+1 (555) 123-4567",

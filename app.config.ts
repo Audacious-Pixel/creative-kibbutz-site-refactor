@@ -5,5 +5,10 @@ export default defineAppConfig({
             light: 'i-heroicons-sun',
             dark: 'i-heroicons-moon',
         },
+        colors: {
+            primary: 'blue',
+            secondary: 'purple',
+            neutral: 'zinc',
+        },
     },
 });

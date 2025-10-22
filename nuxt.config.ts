@@ -1,5 +1,3 @@
-import twDefaultTheme from 'tailwindcss/defaultTheme';
-
 import nuxtUiVite from '@nuxt/ui/vite';
 import tailwindcss from '@tailwindcss/vite';
 
@@ -12,8 +10,11 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
-            shopEnabled: true, // Set to false to disable shop
-            blogEnabled: true, // Set to false to disable blog
+            shopEnabled: false, // Set to false to disable shop
+            blogEnabled: false, // Set to false to disable blog
+            portfolioEnabled: true, // Set to false to disable portfolio
+            pageMode: <'single' | 'pages'>'single',
+            portfolioMode: <'cases' | 'grid'>'grid',
         },
     },
 
@@ -57,26 +58,17 @@ export default defineNuxtConfig({
 
     ui: {
         theme: {
-            colors: {
-                primary: {
-                    DEFAULT: '#434bac',
-                    50: '#f3f4fb',
-                    100: '#e8e9f7',
-                    200: '#d4d6f0',
-                    300: '#b5bae5',
-                    400: '#9198d6',
-                    500: '#6b72c3',
-                    600: '#5157ad',
-                    700: '#434bac',
-                    800: '#3a418b',
-                    900: '#313872',
-                    950: '#1f2348',
-                },
-            },
-
-            fontFamily: {
-                sans: ['Inter var', ...twDefaultTheme.fontFamily.sans],
-            },
+            colors: [
+                'primary',
+                'secondary',
+                'success',
+                'info',
+                'warning',
+                'error',
+                'tertiary',
+                //
+            ],
+            transitions: true,
         },
     },
 

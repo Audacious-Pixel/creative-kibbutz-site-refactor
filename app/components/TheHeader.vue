@@ -10,9 +10,15 @@
                     <NuxtLink to="/" class="text-gray-700 hover:text-primary-600 transition-colors">
                         {{ $t('nav.home') }}
                     </NuxtLink>
-                    <NuxtLink to="/pages/portfolio" class="text-gray-700 hover:text-primary-600 transition-colors">
+
+                    <NuxtLink
+                        v-if="portfolioEnabled"
+                        to="/pages/portfolio"
+                        class="text-gray-700 hover:text-primary-600 transition-colors"
+                    >
                         {{ $t('nav.portfolio') }}
                     </NuxtLink>
+
                     <NuxtLink
                         v-if="shopEnabled"
                         to="/shop"
@@ -20,6 +26,7 @@
                     >
                         {{ $t('shop.title') }}
                     </NuxtLink>
+
                     <NuxtLink
                         v-if="blogEnabled"
                         to="/blog"
@@ -27,7 +34,21 @@
                     >
                         {{ $t('blog.title') }}
                     </NuxtLink>
-                    <NuxtLink to="/pages/contact" class="text-gray-700 hover:text-primary-600 transition-colors">
+
+                    <NuxtLink
+                        v-if="!pageModeSingle"
+                        to="/pages/contact"
+                        class="text-gray-700 hover:text-primary-600 transition-colors"
+                    >
+                        {{ $t('nav.contact') }}
+                    </NuxtLink>
+
+                    <NuxtLink
+                        v-if="pageModeSingle"
+                        @click.stop.prevent="scrollToComponent('homeContact')"
+                        to="/#contact"
+                        class="text-gray-700 hover:text-primary-600 transition-colors"
+                    >
                         {{ $t('nav.contact') }}
                     </NuxtLink>
                 </nav>
@@ -53,6 +74,7 @@
                     >
                         {{ $t('nav.home') }}
                     </NuxtLink>
+
                     <NuxtLink
                         to="/pages/portfolio"
                         class="text-gray-700 hover:text-primary-600 transition-colors"
@@ -60,6 +82,7 @@
                     >
                         {{ $t('nav.portfolio') }}
                     </NuxtLink>
+
                     <NuxtLink
                         v-if="shopEnabled"
                         to="/shop"
@@ -68,6 +91,7 @@
                     >
                         {{ $t('shop.title') }}
                     </NuxtLink>
+
                     <NuxtLink
                         v-if="blogEnabled"
                         to="/blog"
@@ -76,7 +100,9 @@
                     >
                         {{ $t('blog.title') }}
                     </NuxtLink>
+
                     <NuxtLink
+                        v-if="!pageModeSingle"
                         to="/pages/contact"
                         class="text-gray-700 hover:text-primary-600 transition-colors"
                         @click="isMobileMenuOpen = false"
@@ -93,6 +119,23 @@
 <script setup lang="ts">
 const isMobileMenuOpen = ref(false);
 const config = useRuntimeConfig();
+
 const shopEnabled = computed(() => config.public.shopEnabled);
 const blogEnabled = computed(() => config.public.blogEnabled);
+const portfolioEnabled = computed(() => config.public.portfolioEnabled);
+const pageMode = computed(() => config.public?.pageMode || 'pages');
+const pageModeSingle = computed(() => pageMode.value === 'single');
+
+const scrollToComponent = (sectionId: string) => {
+    if (!sectionId || !sectionId.trim()) {
+        return;
+    }
+
+    let sectionElement: any = null;
+
+    if (import.meta.client && !import.meta.env.SSR) {
+        sectionElement = sectionElement || document.querySelector(`[data-ref-id="${sectionId}Ref"]`);
+        sectionElement?.scrollIntoView({ behavior: 'smooth' });
+    }
+};
 </script>

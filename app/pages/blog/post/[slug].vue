@@ -103,11 +103,11 @@
                             </UFormGroup>
 
                             <UFormGroup label="Message" name="message">
-                                <UTextarea v-model="contactForm.message" placeholder="Your message..." rows="5" />
+                                <UTextarea v-model="contactForm.message" placeholder="Your message..." :rows="5" />
                             </UFormGroup>
 
                             <div>
-                                <UButton type="submit" color="primary" size="lg" class="w-full">
+                                <UButton type="submit" color="primary" size="lg" class="w-full cursor-pointer">
                                     {{ $t('contact.form.send') }}
                                 </UButton>
                             </div>

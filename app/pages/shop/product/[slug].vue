@@ -37,7 +37,7 @@
 
                         <div class="flex items-center gap-4 mb-6">
                             <div class="text-4xl font-bold text-primary-600">${{ product.price }}</div>
-                            <UBadge :color="product.inStock ? 'green' : 'red'" size="lg">
+                            <UBadge :color="product.inStock ? 'success' : 'error'" size="lg">
                                 {{ product.inStock ? $t('shop.inStock') : $t('shop.outOfStock') }}
                             </UBadge>
                         </div>
@@ -138,7 +138,7 @@
                                     <UTextarea v-model="contactForm.message" :rows="5" size="lg" :class="['w-full']" />
                                 </UFormGroup>
 
-                                <UButton type="submit" size="xl" block :loading="isSubmitting">
+                                <UButton type="submit" size="xl" block :loading="isSubmitting" class="cursor-pointer">
                                     {{ $t('contact.form.send') }}
                                 </UButton>
                             </div>

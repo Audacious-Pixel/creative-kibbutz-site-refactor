@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div ref="pageContainer" comp-ref-id="pageContainer">
         <!-- Hero Section -->
         <section class="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
             <UContainer>
@@ -13,7 +13,7 @@
                     <p class="text-lg mb-8 text-primary-100">
                         {{ $t('hero.description') }}
                     </p>
-                    <UButton to="/pages/contact" size="xl" color="info" variant="solid">
+                    <UButton :to="contactFormLink" size="xl" color="info" variant="solid">
                         {{ $t('hero.cta') }}
                     </UButton>
                 </div>
@@ -133,6 +133,21 @@
             </UContainer>
         </section>
 
+        <section v-if="pageModeSingle" class="bg-gray-200 py-20" ref="homeContactRef" data-ref-id="homeContactRef">
+            <UContainer>
+                <div class="text-center max-w-3xl mx-auto">
+                    <h1 class="text-5xl font-bold mb-6">
+                        {{ $t('contact.title') }}
+                    </h1>
+                    <p class="text-xl">
+                        {{ $t('cta.description') }}
+                    </p>
+                </div>
+
+                <ContactModule />
+            </UContainer>
+        </section>
+
         <!-- CTA Section -->
         <section class="py-20 bg-primary-600 text-white">
             <UContainer>
@@ -143,7 +158,7 @@
                     <p class="text-xl mb-8">
                         {{ $t('cta.description') }}
                     </p>
-                    <UButton to="/pages/contact" size="xl" color="info" variant="solid">
+                    <UButton :to="contactFormLink" size="xl" color="info" variant="solid" class="cursor-pointer">
                         {{ $t('hero.cta') }}
                     </UButton>
                 </div>
@@ -153,9 +168,47 @@
 </template>
 
 <script setup lang="ts">
+import ContactModule from '~/components/page-modules/contact-module.vue';
+
 const { locale } = useI18n();
 
-const casesData = await import('~/data/cases.json').then((m) => m.default);
+// const siteConfig = await import('~/data/site-config.json').then((m) => m.default);
+// const pageMode = computed(() => siteConfig?.pageMode);
+
+const config = useRuntimeConfig();
+const pageMode = computed(() => config.public?.pageMode || 'pages');
+const pageModeSingle = computed(() => pageMode.value === 'single');
+const contactFormLink = computed(() => (pageModeSingle.value ? '/#contact' : '/pages/contact'));
+
+const pageContainer = ref<HTMLElement | null>(null);
+const homeContactRef = ref<HTMLElement | null>(null);
+const refs = computed(() => ({
+    homeContact: homeContactRef.value,
+}));
+
+const scrollToComponent = (sectionId: string) => {
+    if (!sectionId || !sectionId.trim()) {
+        if (import.meta.client && !import.meta.env.SSR) {
+            console.log('return');
+        }
+        return;
+    }
+
+    let _refs: any = refs.value;
+
+    if (!(sectionId in _refs)) {
+        return;
+    }
+
+    let sectionElement: any = _refs[sectionId] ?? null;
+
+    if (import.meta.client && !import.meta.env.SSR) {
+        sectionElement = sectionElement || document.querySelector(`[data-ref-id="${sectionId}Ref"]`);
+        sectionElement?.scrollIntoView({ behavior: 'smooth' });
+    }
+};
+
+const casesData: any | any[] = await import('~/data/cases.json').then((m) => m.default);
 
 const featuredCases = computed(() => casesData.slice(0, 3));
 </script>

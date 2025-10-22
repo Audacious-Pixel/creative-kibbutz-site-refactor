@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="mb-8 flex flex-wrap gap-4">
-                    <UButton :variant="!selectedCategory ? 'solid' : 'soft'" @click="caseFilter.category = null">
+                    <UButton :variant="!selectedCategory ? 'solid' : 'soft'" @click="caseFilter.category = ''">
                         {{ $t('shop.allCategories') }}
                     </UButton>
 
@@ -44,7 +44,7 @@
                 </div>
             </UContainer>
 
-            <UContainer>
+            <UContainer v-if="portfolioModeCases">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div v-if="hasFilter && !casesToShow?.length" class="col-span-3 w-full">
                         <UContainer>
@@ -127,6 +127,80 @@
                     </template>
                 </div>
             </UContainer>
+
+            <UContainer v-if="!portfolioModeCases">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div v-if="hasFilter && !casesToShow?.length" class="col-span-3 w-full">
+                        <UContainer>
+                            <div class="text-center max-w-2xl mx-auto">
+                                <h2 class="text-2xl font-bold mb-4">
+                                    {{ $t('shop.nothingFound') }}
+                                </h2>
+                                <p class="text-lg text-gray-600 line-clamp-3 mb-2">
+                                    {{ $t('shop.nothingFound') }}
+                                </p>
+                                <UButton @click="clearFilters">
+                                    {{ $t('shop.clearFilters') }}
+                                </UButton>
+                            </div>
+                        </UContainer>
+                    </div>
+
+                    <template v-else>
+                        <div
+                            v-for="(caseItem, caseItemIndex) in casesToShow"
+                            :key="caseItemIndex"
+                            class="group col-span-3 md:col-span-1"
+                        >
+                            <UCard class="md:h-96 transition-transform group-hover:scale-105">
+                                <div
+                                    class="relative w-full h-64 overflow-hidden flex items-center justify-center rounded-2xl"
+                                >
+                                    <img
+                                        v-if="caseItem?.image"
+                                        :src="caseItem?.image"
+                                        :alt="caseItem.title[locale]"
+                                        class="rounded-xl object-cover object-center w-auto h-full"
+                                    />
+                                    <div
+                                        v-else
+                                        class="aspect-video bg-gray-200 rounded-lg mb-4 flex items-center justify-center overflow-hidden"
+                                    >
+                                        <UIcon name="i-heroicons-photo" class="w-16 h-16 text-gray-400" />
+                                    </div>
+                                </div>
+
+                                <UBadge color="primary" variant="soft" class="mb-3">
+                                    {{ caseItem.category[locale] }}
+                                </UBadge>
+                                <h3 class="text-xl font-semibold mb-3">
+                                    {{ caseItem.title[locale] }}
+                                </h3>
+                            </UCard>
+                        </div>
+
+                        <div class="flex col-span-3 w-full gap-4">
+                            <div class="flex w-10/12">
+                                <p class="text-gray-600 line-clamp-3 pt-2">
+                                    <span>Showing {{ casesToShow?.length }} of {{ casesData?.length }} items</span>
+                                </p>
+                            </div>
+
+                            <div v-if="!selectedCategory && casesData?.length > casesToShow?.length" class="w-full">
+                                <UButton
+                                    type="button"
+                                    @click.stop.prevent="increaseCasesLimit"
+                                    size="lg"
+                                    color="primary"
+                                    :class="['cursor-pointer px-4 text-center pl-5']"
+                                >
+                                    Show more...
+                                </UButton>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </UContainer>
         </section>
 
         <!-- CTA Section -->
@@ -139,7 +213,7 @@
                     <p class="text-lg text-gray-600 mb-8">
                         {{ $t('cta.description') }}
                     </p>
-                    <UButton to="/pages/contact" size="lg" color="primary">
+                    <UButton :to="contactFormLink" size="lg" color="primary" class="cursor-pointer">
                         {{ $t('hero.cta') }}
                     </UButton>
                 </div>
@@ -154,6 +228,14 @@ import { useState } from 'nuxt/app';
 const { locale, t } = useI18n();
 
 const casesData = await import('~/data/cases.json').then((m) => m.default);
+
+const config = useRuntimeConfig();
+const portfolioEnabled = computed(() => config.public.portfolioEnabled);
+const portfolioModeCases = computed(() => config.portfolioMode === 'cases');
+
+const pageMode = computed(() => config.public?.pageMode || 'pages');
+const pageModeSingle = computed(() => pageMode.value === 'single');
+const contactFormLink = computed(() => (pageModeSingle.value ? '/#contact' : '/pages/contact'));
 
 const caseFilter = reactive({
     search: '',
@@ -175,23 +257,18 @@ const increaseCasesLimit = () => {
 
 const clearFilters = () => {
     casesLimit.value = 9;
-    caseFilter = {
-        ...caseFilter,
-        search: '',
-        category: '',
-        tags: [],
-    };
+    caseFilter.search = '';
+    caseFilter.category = '';
+    caseFilter.tags = [];
 };
 
 const selectedCategory = computed<string | null>(() => caseFilter?.category || null);
 
 const categories = computed<string[]>(() => {
-    return [...new Set(casesData.map((c: any) => c.category['en'] ?? c.category[locale] ?? null).filter(Boolean))];
+    return [
+        ...new Set(casesData.map((c: any) => c.category['en'] ?? c.category[locale.value] ?? null).filter(Boolean)),
+    ];
 });
-
-if (import.meta.client && !import.meta.env.SSR) {
-    console.log('casesData', casesData);
-}
 
 const clearedSearchTerm = function (value: any) {
     value = typeof value === 'string' ? value : '';
