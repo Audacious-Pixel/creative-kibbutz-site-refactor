@@ -1,9 +1,17 @@
 <template>
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <header
+        class="bg-white border-b border-gray-200 sticky top-0 z-50 transition-all duration-300 pt-3"
+        :style="{ 'min-height': `${headerHeight}px` }"
+    >
         <UContainer>
-            <div class="flex items-center justify-between h-16">
-                <NuxtLink to="/" class="flex items-center">
-                    <img src="@/assets/img/logo.png" alt="Creative Kibbutz" class="h-12 w-auto" />
+            <div class="flex items-center justify-between h-full pb-2">
+                <NuxtLink to="/" class="flex items-center transition-all duration-300">
+                    <img
+                        src="@/assets/img/logo.svg"
+                        alt="Creative Kibbutz"
+                        class="w-auto transition-all duration-300 ease-out"
+                        :style="{ height: `${logoHeight}px` }"
+                    />
                 </NuxtLink>
 
                 <nav class="hidden md:flex items-center gap-8">
@@ -125,6 +133,49 @@ const blogEnabled = computed(() => config.public.blogEnabled);
 const portfolioEnabled = computed(() => config.public.portfolioEnabled);
 const pageMode = computed(() => config.public?.pageMode || 'pages');
 const pageModeSingle = computed(() => pageMode.value === 'single');
+
+// Configurações do efeito de scroll da logo
+const scrollY = ref(0);
+const MAX_LOGO_HEIGHT = 80; // Altura máxima da logo (no topo)
+const MIN_LOGO_HEIGHT = 48; // Altura mínima da logo (após rolar)
+const MAX_HEADER_HEIGHT = 100; // Altura máxima do header
+const MIN_HEADER_HEIGHT = 64; // Altura mínima do header
+const SCROLL_DISTANCE = 150; // Distância em pixels para transição completa
+
+// Calcula a altura da logo baseada no scroll
+const logoHeight = computed(() => {
+    const scrollProgress = Math.min(scrollY.value / SCROLL_DISTANCE, 1);
+    const heightDifference = MAX_LOGO_HEIGHT - MIN_LOGO_HEIGHT;
+    return MAX_LOGO_HEIGHT - heightDifference * scrollProgress;
+});
+
+// Calcula a altura do header baseada no scroll
+const headerHeight = computed(() => {
+    const scrollProgress = Math.min(scrollY.value / SCROLL_DISTANCE, 1);
+    const heightDifference = MAX_HEADER_HEIGHT - MIN_HEADER_HEIGHT;
+    return MAX_HEADER_HEIGHT - heightDifference * scrollProgress;
+});
+
+// Handler para o evento de scroll
+const handleScroll = () => {
+    if (import.meta.client) {
+        scrollY.value = window.scrollY;
+    }
+};
+
+// Adiciona e remove o listener de scroll
+onMounted(() => {
+    if (import.meta.client) {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); // Atualiza o valor inicial
+    }
+});
+
+onBeforeUnmount(() => {
+    if (import.meta.client) {
+        window.removeEventListener('scroll', handleScroll);
+    }
+});
 
 const scrollToComponent = (sectionId: string) => {
     if (!sectionId || !sectionId.trim()) {

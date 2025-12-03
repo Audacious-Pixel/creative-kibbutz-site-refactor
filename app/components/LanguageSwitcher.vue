@@ -7,7 +7,7 @@
         :popper="{ placement: 'bottom-end' }"
         v-model:open="open"
     >
-        <UButton color="white" variant="ghost" trailing-icon="i-heroicons-chevron-down-20-solid">
+        <UButton color="neutral" variant="ghost" trailing-icon="i-heroicons-chevron-down-20-solid">
             <UIcon name="i-heroicons-language" class="w-5 h-5" />
             <span class="ml-2">{{ currentLocaleName }}</span>
         </UButton>
