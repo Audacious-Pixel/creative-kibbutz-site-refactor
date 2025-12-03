@@ -1,4 +1,7 @@
 export default defineAppConfig({
+    appData: {
+        f2_app_id: 'creative-kibbutz',
+    },
     ui: {
         icons: {
             system: 'i-heroicons-computer-desktop',
