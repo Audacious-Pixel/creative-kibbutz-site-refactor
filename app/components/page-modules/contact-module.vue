@@ -74,23 +74,57 @@
                                 >
                                     <UIcon name="i-heroicons-envelope" class="w-6 h-6 text-primary-600" />
                                 </div>
-                                <div>
+                                <div class="w-full">
                                     <h3 class="font-semibold text-lg mb-1">Email</h3>
-                                    <p class="text-gray-600">{{ siteConfig.contact.email }}</p>
+                                    <div class="text-gray-600 flex gap-3 items-center justify-between">
+                                        <span>{{ protectedContactEmail }}</span>
+                                        <button
+                                            @click.stop.prevwent="showContactEmail = !showContactEmail"
+                                            class="min-w-32 text-center cursor-pointer text-white bg-primary-500 border-0 py-1 px-2 focus:outline-none hover:bg-primary-600 rounded-xl"
+                                        >
+                                            {{ showContactEmail ? $t('contact.hide-email') : $t('contact.show-email') }}
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </UCard>
 
-                        <UCard>
+                        <UCard v-if="activeFones.length">
                             <div class="flex items-start gap-4">
                                 <div
                                     class="flex items-center justify-center w-12 h-12 bg-primary-100 rounded-full flex-shrink-0"
                                 >
                                     <UIcon name="i-heroicons-phone" class="w-6 h-6 text-primary-600" />
                                 </div>
-                                <div>
-                                    <h3 class="font-semibold text-lg mb-1">Phone</h3>
-                                    <p class="text-gray-600">{{ siteConfig.contact.phone }}</p>
+                                <div class="w-full">
+                                    <h3 class="font-semibold text-lg mb-1">Phones</h3>
+                                    <ul class="text-gray-600 flex-wrap flex flex-col gap-2 w-full">
+                                        <template v-for="(activeFone, index) in activeFones" :key="index">
+                                            <li
+                                                :class="[
+                                                    'flex flex-row items-center gap-1 w-full',
+                                                    {
+                                                        'md:pb-2 md:border-b':
+                                                            activeFones.length > 1 && index + 1 < activeFones.length,
+                                                    },
+                                                ]"
+                                            >
+                                                <span class="w-4/12">{{ activeFone?.label }}</span>
+                                                <span class="w-5/12">{{ activeFone?.value }}</span>
+                                                <span class="w-3/12 flex gap-1 self-stretch items-center">
+                                                    <span v-if="activeFone.accept_calls" title="Accept Calls">
+                                                        <UIcon name="material-symbols:call" />
+                                                    </span>
+                                                    <span v-if="activeFone.im.includes('WA')" title="WhatsApp">
+                                                        <UIcon name="ic:outline-whatsapp" />
+                                                    </span>
+                                                    <span v-if="activeFone.im.includes('TG')" title="Telegram">
+                                                        <UIcon name="ic:outline-telegram" />
+                                                    </span>
+                                                </span>
+                                            </li>
+                                        </template>
+                                    </ul>
                                 </div>
                             </div>
                         </UCard>
@@ -151,7 +185,10 @@ import type { FormSubmitEvent } from '@nuxt/ui';
 const { t } = useI18n();
 const toast = useToast();
 
-const siteConfig = await import('~/data/site-config.json').then((m) => m.default);
+// const oldSiteConfig = await import('~/data/old-site-config.json').then((m) => m.default);
+
+const appConfig = useAppConfig();
+const siteConfig = appConfig?.siteConfig || {};
 
 const schema = z.object({
     name: z.string().min(2, 'Name must be at least 2 characters').max(100, 'Name is too long'),
@@ -197,6 +234,23 @@ const submitContact = async (event: FormSubmitEvent<Schema>) => {
         isSubmitting.value = false;
     }
 };
+
+const activeFones = computed(() => {
+    return (siteConfig.contact?.phones || [])
+        .filter((i: any) => i?.show !== false)
+        .map((i: any) => {
+            return {
+                im: i?.im || [],
+                ...i,
+            };
+        });
+});
+
+const showContactEmail = ref(false);
+
+const protectedContactEmail = computed(() => {
+    return showContactEmail.value ? siteConfig.contact.email : '**********@*******.com';
+});
 
 useHead({
     title: `${t('contact.title')} - Creative Kibbutz`,

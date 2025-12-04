@@ -37,9 +37,12 @@
                     <LanguageSwitcher />
                     <div class="h-6 w-px bg-gray-700" />
                     <UColorModeSelect
-                        color="neutral"
-                        variant="none"
-                        class="font-medium text-gray-300 dark:text-gray-400"
+                        color="primary"
+                        variant="outline"
+                        :class="[
+                            'font-medium text-secondary dark:text-secondary bg-transparent border-none',
+                            'rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-secondary/50 hover:bg-secondary/10 active:bg-secondary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary cursor-pointer',
+                        ]"
                     />
                 </div>
                 <p>&copy; {{ new Date().getFullYear() }} Creative Kibbutz. All rights reserved.</p>
@@ -54,5 +57,8 @@
 <script setup lang="ts">
 const appConfig = useAppConfig();
 
-console.log('appConfig', appConfig?.f2_app_id);
+if (import.meta.client) {
+    console.log('appConfig', appConfig);
+    console.log('f2_app_id', appConfig?.appData?.f2_app_id);
+}
 </script>

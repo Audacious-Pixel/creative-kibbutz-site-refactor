@@ -172,8 +172,11 @@ import ContactModule from '~/components/page-modules/contact-module.vue';
 
 const { locale } = useI18n();
 
-// const siteConfig = await import('~/data/site-config.json').then((m) => m.default);
-// const pageMode = computed(() => siteConfig?.pageMode);
+// const oldSiteConfig = await import('~/data/old-site-config.json').then((m) => m.default);
+// const pageMode = computed(() => oldSiteConfig?.pageMode);
+
+// const appConfig = useAppConfig();
+// const siteConfig = appConfig?.siteConfig || {};
 
 const config = useRuntimeConfig();
 const pageMode = computed(() => config.public?.pageMode || 'pages');

@@ -19,6 +19,8 @@ Modern website for Creative Kibbutz built with Nuxt 4 + NuxtUI.
 
 ```
 creative-kibbutz-nuxt/
+├──app/
+│   └── app/app.config.ts
 ├── app.vue                 # Root component
 ├── layouts/
 │   └── default.vue         # Default layout
@@ -39,7 +41,7 @@ creative-kibbutz-nuxt/
 │       ├── en.json         # English translations
 │       └── pt.json         # Portuguese translations
 ├── data/
-│   ├── site-config.json    # Site configuration
+│   ├── old-site-config.json    # Site configuration (obsolete, use 'siteConfig' on app/app.config.ts)
 │   └── cases.json          # Success cases data
 └── nuxt.config.ts          # Nuxt configuration
 ```
@@ -81,7 +83,7 @@ npm run preview
 
 ### Site Configuration
 
-Edit `data/site-config.json` to update:
+Edit 'siteConfig' on  `app/app.config.ts` to update:
 
 - Site contact information
 - Social media links

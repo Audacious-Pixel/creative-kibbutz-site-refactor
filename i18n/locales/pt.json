@@ -43,7 +43,9 @@
             "phone": "Telefone",
             "message": "Mensagem",
             "send": "Enviar"
-        }
+        },
+        "show-email": "Mostrar e-mail",
+        "hide-email": "Ocultar e-mail"
     },
     "case": {
         "aboutClient": "Sobre o Cliente",
