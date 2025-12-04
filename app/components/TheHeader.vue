@@ -1,7 +1,10 @@
 <template>
     <header
-        class="bg-white border-b border-gray-200 sticky top-0 z-50 transition-all duration-300 pt-3"
-        :style="{ 'min-height': `${headerHeight}px` }"
+        class="bg-white border-b border-gray-200 sticky top-0 z-50 transition-all duration-300 pt-3 md:max-h-[var(--header-min-height)]"
+        :style="{
+            '--header-min-height': `${headerHeight}px`,
+            '--logo-height': `${logoHeight}px`,
+        }"
     >
         <UContainer>
             <div class="flex items-center justify-between h-full pb-2">
@@ -9,8 +12,7 @@
                     <img
                         src="@/assets/img/logo.svg"
                         alt="Creative Kibbutz"
-                        class="w-auto transition-all duration-300 ease-out"
-                        :style="{ height: `${logoHeight}px` }"
+                        class="w-72 md:w-auto transition-all duration-300 ease-out h-[var(--logo-height)]"
                     />
                 </NuxtLink>
 
