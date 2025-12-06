@@ -1,18 +1,18 @@
 <template>
     <div ref="pageContainer" comp-ref-id="pageContainer">
         <!-- Hero Section -->
-        <section class="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
+        <section class="bg-white from-primary-600 to-primary-800 py-20">
             <UContainer>
                 <div class="max-w-3xl mx-auto text-center">
-                    <h1 class="text-5xl font-bold mb-6">
+                    <h1 class="text-4xl font-bold mb-6">
                         {{ $t('hero.title') }}
                     </h1>
-                    <p class="text-2xl mb-4">
+                    <p class="text-2xl mb-10">
                         {{ $t('hero.subtitle') }}
                     </p>
-                    <p class="text-lg mb-8 text-primary-100">
+                    <!-- <p class="text-lg mb-8 text-primary-100">
                         {{ $t('hero.description') }}
-                    </p>
+                    </p> -->
                     <UButton :to="contactFormLink" size="xl" color="info" variant="solid">
                         {{ $t('hero.cta') }}
                     </UButton>
@@ -21,59 +21,57 @@
         </section>
 
         <!-- Features Section -->
-        <section class="py-20">
-            <UContainer>
-                <div class="text-center mb-16">
+        <section class="pb-20">
+            <UContainer class="border-white">
+                <!-- <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold mb-4">
                         {{ $t('features.title') }}
                     </h2>
                     <p class="text-xl text-gray-600">
                         {{ $t('features.description') }}
                     </p>
-                </div>
+                </div> -->
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <UCard>
-                        <template #header>
-                            <div class="flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
-                                <UIcon name="i-heroicons-users" class="w-8 h-8 text-primary-600" />
-                            </div>
-                        </template>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-none shadow-none">
+                    <UCard class=" border-0 text-center border-none shadow-none">
+                        <div class="flex justify-center items-center h-74 mb-4">
+                            <img src="/icons/team.svg" class="w-72 h-auto" /> 
+                        </div>
+                        
                         <h3 class="text-xl font-semibold mb-2">
                             {{ $t('features.team.title') }}
                         </h3>
-                        <p class="text-gray-600">
+                        <p class="text-gray-600 ">
                             {{ $t('features.team.description') }}
                         </p>
                     </UCard>
 
-                    <UCard>
-                        <template #header>
-                            <div class="flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
-                                <UIcon name="i-heroicons-light-bulb" class="w-8 h-8 text-primary-600" />
-                            </div>
-                        </template>
+                    <UCard class=" border-0 text-center">
+                        <div class="flex justify-center items-center h-74 mb-4">
+                            <img src="/icons/our-model.svg" class="w-72 h-auto" /> 
+                        </div>
+                        
                         <h3 class="text-xl font-semibold mb-2">
                             {{ $t('features.model.title') }}
                         </h3>
-                        <p class="text-gray-600">
+                        <p class="text-gray-600 ">
                             {{ $t('features.model.description') }}
                         </p>
                     </UCard>
 
-                    <UCard>
-                        <template #header>
-                            <div class="flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
-                                <UIcon name="i-heroicons-rocket-launch" class="w-8 h-8 text-primary-600" />
-                            </div>
-                        </template>
+                    <UCard class=" border-0 text-center">
+                        <div class="flex justify-center items-center h-74 mb-4">
+                            <img src="/icons/hit-ground-running.svg" class="w-72 h-auto" /> 
+                        </div>
+                        
                         <h3 class="text-xl font-semibold mb-2">
                             {{ $t('features.ready.title') }}
                         </h3>
-                        <p class="text-gray-600">
+                        <p class="text-gray-600 ">
                             {{ $t('features.ready.description') }}
                         </p>
                     </UCard>
+
                 </div>
             </UContainer>
         </section>

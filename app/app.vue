@@ -15,17 +15,17 @@
 <script setup lang="ts">
 useHead({
     title: 'Creative Kibbutz - Your Partner in Community Success',
-    meta: [{ name: 'description', content: 'Marketing, Design, and Web Services for Jewish Organizations' }],
+    meta: [{ name: 'description', content: 'Marketing, Design, and Web Services for non-profit Organizations' }],
     htmlAttrs: {
         lang: 'en',
     },
 });
 
-const { finalizePendingLocaleChange } = useI18n();
+// const { finalizePendingLocaleChange } = useI18n();
 
-const onBeforeEnter = async () => {
-    await finalizePendingLocaleChange();
-};
+// const onBeforeEnter = async () => {
+//     await finalizePendingLocaleChange();
+// };
 </script>
 
 <style>
