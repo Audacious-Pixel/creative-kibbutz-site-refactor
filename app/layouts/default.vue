@@ -1,7 +1,7 @@
 <template>
     <UApp>
         <div class="min-h-screen flex flex-col">
-            <TheHeader />
+            <TheHeaderHome />
             <main class="flex-1">
                 <slot />
             </main>
