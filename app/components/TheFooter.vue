@@ -15,12 +15,12 @@
                         <NuxtLink to="/" class="text-gray-400 hover:text-white transition-colors">
                             Home
                         </NuxtLink>
-                        <NuxtLink to="/pages/portfolio" class="text-gray-400 hover:text-white transition-colors">
+                        <a href="/#portfolio" @click.prevent="scrollToSection('portfolioSection')" class="text-gray-400 hover:text-white transition-colors cursor-pointer">
                             Portfolio
-                        </NuxtLink>
-                        <NuxtLink to="/pages/contact" class="text-gray-400 hover:text-white transition-colors">
+                        </a>
+                        <a href="/#contact" @click.prevent="scrollToSection('homeContactRef')" class="text-gray-400 hover:text-white transition-colors cursor-pointer">
                             Contact
-                        </NuxtLink>
+                        </a>
                     </nav>
                 </div>
 
@@ -40,4 +40,13 @@
 </template>
 
 <script setup lang="ts">
+const scrollToSection = (sectionId: string) => {
+    if (import.meta.client) {
+        let element = document.getElementById(sectionId);
+        if (!element) {
+            element = document.querySelector(`[data-ref-id="${sectionId}"]`);
+        }
+        element?.scrollIntoView({ behavior: 'smooth' });
+    }
+};
 </script>
