@@ -15,14 +15,14 @@
             <img
               src="@/assets/img/logo.svg"
               alt="Creative Kibbutz"
-              class="h-28 w-auto"
+              class="h-40 w-auto"
             />
           </NuxtLink>
         </div>
 
         <!-- Navigation -->
         <nav
-          class="absolute right-0 flex items-center gap-6 text-sm will-change-transform"
+          class="absolute flex items-center gap-6 text-sm will-change-transform"
           :style="navStyle"
         >
           <NuxtLink to="/" class="text-gray-700 hover:text-primary-600 transition-colors">
@@ -170,7 +170,7 @@ const interpolate = (start: number, end: number, p: number) => {
 };
 
 const headerHeight = computed(() => {
-  const height = interpolate(180, 70, progress.value);
+  const height = interpolate(220, 70, progress.value);
   return `${height}px`;
 });
 
@@ -179,9 +179,9 @@ const headerStyle = computed(() => ({
 }));
 
 const logoWrapperStyle = computed(() => {
-  const scale = interpolate(1, 0.4, progress.value);
-  const leftPos = interpolate(50, 2, progress.value);
-  const translateY = interpolate(20, 15, progress.value);
+  const scale = interpolate(1, 0.35, progress.value);
+  const leftPos = interpolate(50, 8, progress.value);
+  const translateY = interpolate(24, 12, progress.value);
   
   return {
     transform: `translateX(-50%) translateY(${translateY}px) scale(${scale})`,
@@ -191,8 +191,8 @@ const logoWrapperStyle = computed(() => {
 });
 
 const navStyle = computed(() => {
-  const translateY = interpolate(130, 25, progress.value);
-  const leftPos = interpolate(50, 65, progress.value);
+  const translateY = interpolate(175, 22, progress.value);
+  const leftPos = interpolate(50, 92, progress.value);
   
   return {
     transform: `translateX(-50%) translateY(${translateY}px)`,
