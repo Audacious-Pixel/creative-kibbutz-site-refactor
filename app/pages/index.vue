@@ -118,19 +118,26 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                    <div v-for="caseItem in featuredCases" :key="caseItem.id" class="group cursor-pointer">
+                    <div 
+                        v-for="caseItem in featuredCases" 
+                        :key="caseItem.id" 
+                        class="group cursor-pointer"
+                        @click="openModal(caseItem)"
+                    >
                         <UCard class="h-full transition-transform group-hover:scale-105">
-                            <img
-                                v-if="caseItem?.image"
-                                :src="caseItem?.image"
-                                :alt="caseItem.title.en"
-                                class="rounded-xl max-w-5xl mx-auto w-10/12"
-                            />
-                            <div
-                                v-else
-                                class="aspect-video bg-gray-200 rounded-lg mb-4 flex items-center justify-center"
-                            >
-                                <UIcon name="i-heroicons-photo" class="w-16 h-16 text-gray-400" />
+                            <div class="relative w-full h-48 overflow-hidden flex items-center justify-center rounded-xl mb-4">
+                                <img
+                                    v-if="caseItem?.image"
+                                    :src="caseItem?.image"
+                                    :alt="caseItem.title.en"
+                                    class="rounded-xl object-cover object-center w-full h-full"
+                                />
+                                <div
+                                    v-else
+                                    class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center w-full h-full"
+                                >
+                                    <UIcon name="i-heroicons-photo" class="w-16 h-16 text-gray-400" />
+                                </div>
                             </div>
                             <UBadge color="primary" variant="soft" class="mb-2">
                                 {{ caseItem.category.en }}
@@ -138,16 +145,12 @@
                             <h3 class="text-lg font-semibold mb-2">
                                 {{ caseItem.title.en }}
                             </h3>
-                            <p class="text-gray-600 mb-4">
+                            <p class="text-sm text-gray-500 mb-2">
+                                {{ caseItem.client }}
+                            </p>
+                            <p class="text-gray-600 line-clamp-2">
                                 {{ caseItem.description.en }}
                             </p>
-                            <NuxtLink
-                                :to="`/pages/portfolio/case/${caseItem.slug}`"
-                                class="text-primary-600 hover:text-primary-800 font-semibold inline-flex items-center gap-2"
-                            >
-                                View Case
-                                <UIcon name="i-heroicons-arrow-right" />
-                            </NuxtLink>
                         </UCard>
                     </div>
                 </div>
@@ -159,6 +162,52 @@
                 </div>
             </UContainer>
         </section>
+
+        <!-- Case Detail Modal -->
+        <UModal v-model:open="isModalOpen">
+            <template #content>
+                <UCard v-if="selectedCase" class="max-w-4xl">
+                    <template #header>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <UBadge color="primary" variant="soft" class="mb-2">
+                                    {{ selectedCase.category.en }}
+                                </UBadge>
+                                <h2 class="text-2xl font-bold">
+                                    {{ selectedCase.title.en }}
+                                </h2>
+                                <p class="text-gray-500 mt-1">
+                                    {{ selectedCase.client }}
+                                </p>
+                            </div>
+                            <UButton
+                                icon="i-heroicons-x-mark"
+                                color="neutral"
+                                variant="ghost"
+                                @click="closeModal"
+                            />
+                        </div>
+                    </template>
+
+                    <div class="space-y-6">
+                        <div class="w-full overflow-hidden rounded-xl">
+                            <img
+                                v-if="selectedCase?.image"
+                                :src="selectedCase?.image"
+                                :alt="selectedCase.title.en"
+                                class="w-full h-auto object-cover rounded-xl"
+                            />
+                        </div>
+
+                        <div>
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                {{ selectedCase.description.en }}
+                            </p>
+                        </div>
+                    </div>
+                </UCard>
+            </template>
+        </UModal>
 
         <!-- Contact Section -->
         <section v-if="pageModeSingle" class="bg-gray-200 py-20" ref="homeContactRef" data-ref-id="homeContactRef">
@@ -182,4 +231,17 @@ const homeContactRef = ref<HTMLElement | null>(null);
 const casesData: any | any[] = await import('~/data/cases.json').then((m) => m.default);
 
 const featuredCases = computed(() => casesData.slice(0, 3));
+
+const isModalOpen = ref(false);
+const selectedCase = ref<any>(null);
+
+const openModal = (caseItem: any) => {
+    selectedCase.value = caseItem;
+    isModalOpen.value = true;
+};
+
+const closeModal = () => {
+    isModalOpen.value = false;
+    selectedCase.value = null;
+};
 </script>
