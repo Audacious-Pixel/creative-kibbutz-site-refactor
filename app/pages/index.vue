@@ -92,11 +92,11 @@
                             From small community initiatives to large international NGOs, we tailor our approach to fit your unique needs and goals.
                         </p>
                         <UButton 
-                            to="/pages/portfolio" 
+                            @click="scrollToSection('portfolioSection')"
                             size="xl" 
-                            class="bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold"
+                            class="bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold cursor-pointer"
                         >
-                            Learn More About Us
+                            View Our Work
                         </UButton>
                     </div>
                     <div class="hidden lg:block">
@@ -106,7 +106,7 @@
         </section>
 
         <!-- Portfolio Preview - Our Success Cases -->
-        <section class="py-20">
+        <section id="portfolioSection" class="py-20">
             <UContainer>
                 <div class="text-center mb-12">
                     <h2 class="text-4xl font-bold mb-4">
@@ -155,11 +155,6 @@
                     </div>
                 </div>
 
-                <div class="text-center">
-                    <UButton to="/pages/portfolio" size="lg" variant="outline">
-                        Portfolio
-                    </UButton>
-                </div>
             </UContainer>
         </section>
 
@@ -230,7 +225,7 @@ const homeContactRef = ref<HTMLElement | null>(null);
 
 const casesData: any | any[] = await import('~/data/cases.json').then((m) => m.default);
 
-const featuredCases = computed(() => casesData.slice(0, 3));
+const featuredCases = computed(() => casesData.slice(0, 12));
 
 const isModalOpen = ref(false);
 const selectedCase = ref<any>(null);
@@ -243,5 +238,12 @@ const openModal = (caseItem: any) => {
 const closeModal = () => {
     isModalOpen.value = false;
     selectedCase.value = null;
+};
+
+const scrollToSection = (sectionId: string) => {
+    if (import.meta.client) {
+        const element = document.getElementById(sectionId);
+        element?.scrollIntoView({ behavior: 'smooth' });
+    }
 };
 </script>

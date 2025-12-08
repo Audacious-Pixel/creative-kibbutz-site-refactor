@@ -29,13 +29,14 @@
             Home
           </NuxtLink>
 
-          <NuxtLink
+          <a
             v-if="portfolioEnabled"
-            to="/pages/portfolio"
-            class="text-gray-700 hover:text-primary-600 transition-colors"
+            @click.prevent="scrollToComponent('portfolioSection')"
+            href="/#portfolio"
+            class="text-gray-700 hover:text-primary-600 transition-colors cursor-pointer"
           >
             Portfolio
-          </NuxtLink>
+          </a>
 
           <NuxtLink
             v-if="shopEnabled"
@@ -101,14 +102,14 @@
             Home
           </NuxtLink>
 
-          <NuxtLink
+          <a
             v-if="portfolioEnabled"
-            to="/pages/portfolio"
-            class="text-gray-700 hover:text-primary-600 transition-colors"
-            @click="isMobileMenuOpen = false"
+            @click.prevent="scrollToComponent('portfolioSection'); isMobileMenuOpen = false"
+            href="/#portfolio"
+            class="text-gray-700 hover:text-primary-600 transition-colors cursor-pointer"
           >
             Portfolio
-          </NuxtLink>
+          </a>
 
           <NuxtLink
             v-if="shopEnabled"
@@ -207,7 +208,10 @@ const scrollToComponent = (sectionId: string) => {
   if (!sectionId || !sectionId.trim()) return;
 
   if (import.meta.client && !import.meta.env.SSR) {
-    const sectionElement = document.querySelector(`[data-ref-id="${sectionId}Ref"]`);
+    let sectionElement = document.getElementById(sectionId);
+    if (!sectionElement) {
+      sectionElement = document.querySelector(`[data-ref-id="${sectionId}Ref"]`);
+    }
     sectionElement?.scrollIntoView({ behavior: 'smooth' });
   }
 };
