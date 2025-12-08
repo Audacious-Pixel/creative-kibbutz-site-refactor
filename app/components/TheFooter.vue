@@ -3,27 +3,28 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12">
                 <div class="flex flex-col items-center md:items-start gap-4">
-                    <img
-                        src="@/assets/img/logo.svg"
-                        alt="Creative Kibbutz"
-                        class="h-12 w-auto brightness-0 invert"
-                    />
+                    <img src="@/assets/img/logo.svg" alt="Creative Kibbutz" class="h-12 w-auto brightness-0 invert" />
                     <p class="text-blue-200 text-sm max-w-xs text-center md:text-left">
                         {{ siteConfig.slogan }}
                     </p>
                 </div>
 
-
                 <div>
                     <h4 class="font-semibold mb-4 text-blue-50">Navigation</h4>
                     <nav class="flex flex-col gap-1">
-                        <NuxtLink to="/" class="text-blue-200 hover:text-white transition-colors">
-                            Home
-                        </NuxtLink>
-                        <a href="/#portfolio" @click.prevent="scrollToSection('portfolioSection')" class="text-blue-200 hover:text-white transition-colors cursor-pointer">
+                        <NuxtLink to="/" class="text-blue-200 hover:text-white transition-colors">Home</NuxtLink>
+                        <a
+                            href="/#portfolio"
+                            @click.prevent="scrollToSection('portfolio')"
+                            class="text-blue-200 hover:text-white transition-colors cursor-pointer"
+                        >
                             Portfolio
                         </a>
-                        <a href="/#contact" @click.prevent="scrollToSection('homeContactRef')" class="text-blue-200 hover:text-white transition-colors cursor-pointer">
+                        <a
+                            href="/#contact"
+                            @click.prevent="scrollToSection('homeContactRef')"
+                            class="text-blue-200 hover:text-white transition-colors cursor-pointer"
+                        >
                             Contact
                         </a>
                     </nav>
@@ -32,13 +33,19 @@
                 <div v-if="false">
                     <h4 class="font-semibold mb-4 text-blue-50">Navigation</h4>
                     <nav class="flex flex-col gap-1">
-                        <NuxtLink to="/" class="text-blue-200 hover:text-white transition-colors">
-                            Home
-                        </NuxtLink>
-                        <a href="/#portfolio" @click.prevent="scrollToSection('portfolioSection')" class="text-blue-200 hover:text-white transition-colors cursor-pointer">
+                        <NuxtLink to="/" class="text-blue-200 hover:text-white transition-colors">Home</NuxtLink>
+                        <a
+                            href="/#portfolio"
+                            @click.prevent="scrollToSection('portfolio')"
+                            class="text-blue-200 hover:text-white transition-colors cursor-pointer"
+                        >
                             Portfolio
                         </a>
-                        <a href="/#contact" @click.prevent="scrollToSection('homeContactRef')" class="text-blue-200 hover:text-white transition-colors cursor-pointer">
+                        <a
+                            href="/#contact"
+                            @click.prevent="scrollToSection('homeContactRef')"
+                            class="text-blue-200 hover:text-white transition-colors cursor-pointer"
+                        >
                             Contact
                         </a>
                     </nav>
@@ -46,10 +53,14 @@
 
                 <div class="flex gap-6">
                     <template v-for="(item, index) in socialMediaItems" :key="index">
-                            <a :href="item?.url" target="_blank" class="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white">
-                                <UIcon :name="item?.icon || 'mynaui:planet'" />
-                            </a>
-                        </template>
+                        <a
+                            :href="item?.url"
+                            target="_blank"
+                            class="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white"
+                        >
+                            <UIcon :name="item?.icon || 'mynaui:planet'" />
+                        </a>
+                    </template>
                 </div>
 
                 <div v-if="false" class="flex gap-6">
@@ -178,5 +189,5 @@ const socialMediaItems = computed(() => {
     let socialMedia = siteConfig?.socialMedia || [];
 
     return socialMedia.filter((i: any) => i?.url && i?.show !== false);
-})
+});
 </script>

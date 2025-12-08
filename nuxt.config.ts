@@ -15,17 +15,18 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
-            shopEnabled: false, // Set to false to disable shop
-            blogEnabled: false, // Set to false to disable blog
-            portfolioEnabled: true, // Set to false to disable portfolio
-            pageMode: <'single' | 'pages'>'single',
-            portfolioMode: <'cases' | 'grid'>'grid',
+            /*
+            algumas configs foram movidas para app/app.config.ts. Exemplo:
+            - shopEnabled
+            - blogEnabled
+            - portfolioEnabled
+            - pageMode
+            - portfolioMode
+            */
         },
     },
 
-    modules: [
-        '@nuxt/ui',
-    ],
+    modules: ['@nuxt/ui'],
 
     colorMode: {
         preference: 'light',
@@ -50,8 +51,10 @@ export default defineNuxtConfig({
     vite: {
         server: {
             hmr: {
-                clientPort: 443,
-                protocol: 'wss',
+                // clientPort: 443,
+                // protocol: 'wss',
+                clientPort: undefined,
+                protocol: undefined,
             },
             allowedHosts: true,
         },

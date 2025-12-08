@@ -4,7 +4,12 @@ export default defineAppConfig({
         slogan: 'Marketing, Design, and Web Services for non-profit Organizations',
         alterSlogan: 'Empowering non-profits with creative solutions for community growth.',
         pageModes: ['single', 'pages'],
-        pageMode: 'single',
+        // pageMode: 'single', // 'single' | 'pages'
+        shopEnabled: false, // Set to false to disable shop
+        blogEnabled: false, // Set to false to disable blog
+        portfolioEnabled: true, // Set to false to disable portfolio
+        pageMode: <'single' | 'pages'>'single',
+        portfolioMode: <'cases' | 'grid'>'grid',
         contact: {
             email: 'contact@creativekibbutz.com',
             phones: [

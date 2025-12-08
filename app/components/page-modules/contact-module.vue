@@ -4,9 +4,7 @@
         <UContainer>
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
-                <p class="text-xl text-gray-600">
-                    Contact us to schedule an initial consultation
-                </p>
+                <p class="text-xl text-gray-600">Contact us to schedule an initial consultation</p>
             </div>
             <div class="max-w-2xl mx-auto">
                 <UCard>

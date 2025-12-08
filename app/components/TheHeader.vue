@@ -1,13 +1,27 @@
 <template>
     <header
-        class="bg-white sticky top-0 z-50 transition-all duration-300 pt-3 md:max-h-(--header-min-height)"
+        :class="[
+            'bg-white sticky top-0 z-50 transition-all duration-300 pt-3 md:max-h-(--header-min-height)',
+            `scroll-y-${scrollY}`,
+            {
+                'pb-28': scrollY < 100,
+            },
+        ]"
         :style="{
             '--header-min-height': `${headerHeight}px`,
             '--logo-height': `${logoHeight}px`,
+            '--scroll-y-value': `${scrollY}px`,
         }"
     >
         <UContainer>
-            <div class="flex items-center justify-between h-full pb-2">
+            <div
+                :class="[
+                    'flex items-center justify-between h-full pb-2',
+                    {
+                        'flex-col': scrollY < 100,
+                    },
+                ]"
+            >
                 <NuxtLink to="/" class="flex items-center transition-all duration-300">
                     <img
                         src="@/assets/img/logo.svg"
@@ -16,23 +30,107 @@
                     />
                 </NuxtLink>
 
-                <nav class="hidden md:flex items-center gap-8">
-                    <NuxtLink to="/" class="text-gray-700 hover:text-primary-600 transition-colors">
+                <div>
+                    <nav class="hidden md:flex items-center gap-8">
+                        <NuxtLink to="/" class="text-gray-700 hover:text-primary-600 transition-colors">Home</NuxtLink>
+
+                        <template v-if="portfolioEnabled">
+                            <NuxtLink
+                                v-if="!pageModeSingle"
+                                to="/pages/portfolio"
+                                class="text-gray-700 hover:text-primary-600 transition-colors"
+                            >
+                                Portfolio
+                            </NuxtLink>
+
+                            <NuxtLink
+                                v-if="pageModeSingle"
+                                @click.stop.prevent="scrollToComponent('homePortfolio')"
+                                to="/#portfolio"
+                                class="text-gray-700 hover:text-primary-600 transition-colors"
+                            >
+                                Portfolio
+                            </NuxtLink>
+                        </template>
+
+                        <NuxtLink
+                            v-if="shopEnabled"
+                            to="/shop"
+                            class="text-gray-700 hover:text-primary-600 transition-colors"
+                        >
+                            Shop
+                        </NuxtLink>
+
+                        <NuxtLink
+                            v-if="blogEnabled"
+                            to="/blog"
+                            class="text-gray-700 hover:text-primary-600 transition-colors"
+                        >
+                            Blog
+                        </NuxtLink>
+
+                        <NuxtLink
+                            v-if="!pageModeSingle"
+                            to="/pages/contact"
+                            class="text-gray-700 hover:text-primary-600 transition-colors"
+                        >
+                            Contact
+                        </NuxtLink>
+
+                        <NuxtLink
+                            v-if="pageModeSingle"
+                            @click.stop.prevent="scrollToComponent('homeContact')"
+                            to="/#contact"
+                            class="text-gray-700 hover:text-primary-600 transition-colors"
+                        >
+                            Contact
+                        </NuxtLink>
+                    </nav>
+
+                    <UButton
+                        icon="i-heroicons-bars-3"
+                        color="neutral"
+                        variant="ghost"
+                        class="md:hidden"
+                        @click="isMobileMenuOpen = !isMobileMenuOpen"
+                    />
+                </div>
+            </div>
+
+            <div v-if="isMobileMenuOpen" class="md:hidden py-4 border-t border-gray-200">
+                <nav class="flex flex-col gap-4">
+                    <NuxtLink
+                        to="/"
+                        class="text-gray-700 hover:text-primary-600 transition-colors"
+                        @click="isMobileMenuOpen = false"
+                    >
                         Home
                     </NuxtLink>
 
-                    <NuxtLink
-                        v-if="portfolioEnabled"
-                        to="/pages/portfolio"
-                        class="text-gray-700 hover:text-primary-600 transition-colors"
-                    >
-                        Portfolio
-                    </NuxtLink>
+                    <template v-if="portfolioEnabled">
+                        <NuxtLink
+                            v-if="!pageModeSingle"
+                            to="/pages/portfolio"
+                            class="text-gray-700 hover:text-primary-600 transition-colors"
+                        >
+                            Portfolio
+                        </NuxtLink>
+
+                        <NuxtLink
+                            v-if="pageModeSingle"
+                            @click.stop.prevent="scrollToComponent('homePortfolio')"
+                            to="/#portfolio"
+                            class="text-gray-700 hover:text-primary-600 transition-colors cursor-pointer"
+                        >
+                            Portfolio
+                        </NuxtLink>
+                    </template>
 
                     <NuxtLink
                         v-if="shopEnabled"
                         to="/shop"
                         class="text-gray-700 hover:text-primary-600 transition-colors"
+                        @click="isMobileMenuOpen = false"
                     >
                         Shop
                     </NuxtLink>
@@ -41,6 +139,7 @@
                         v-if="blogEnabled"
                         to="/blog"
                         class="text-gray-700 hover:text-primary-600 transition-colors"
+                        @click="isMobileMenuOpen = false"
                     >
                         Blog
                     </NuxtLink>
@@ -62,61 +161,6 @@
                         Contact
                     </NuxtLink>
                 </nav>
-
-                <UButton
-                    icon="i-heroicons-bars-3"
-                    color="neutral"
-                    variant="ghost"
-                    class="md:hidden"
-                    @click="isMobileMenuOpen = !isMobileMenuOpen"
-                />
-            </div>
-
-            <div v-if="isMobileMenuOpen" class="md:hidden py-4 border-t border-gray-200">
-                <nav class="flex flex-col gap-4">
-                    <NuxtLink
-                        to="/"
-                        class="text-gray-700 hover:text-primary-600 transition-colors"
-                        @click="isMobileMenuOpen = false"
-                    >
-                        Home
-                    </NuxtLink>
-
-                    <NuxtLink
-                        to="/pages/portfolio"
-                        class="text-gray-700 hover:text-primary-600 transition-colors"
-                        @click="isMobileMenuOpen = false"
-                    >
-                        Portfolio
-                    </NuxtLink>
-
-                    <NuxtLink
-                        v-if="shopEnabled"
-                        to="/shop"
-                        class="text-gray-700 hover:text-primary-600 transition-colors"
-                        @click="isMobileMenuOpen = false"
-                    >
-                        Shop
-                    </NuxtLink>
-
-                    <NuxtLink
-                        v-if="blogEnabled"
-                        to="/blog"
-                        class="text-gray-700 hover:text-primary-600 transition-colors"
-                        @click="isMobileMenuOpen = false"
-                    >
-                        Blog
-                    </NuxtLink>
-
-                    <NuxtLink
-                        v-if="!pageModeSingle"
-                        to="/pages/contact"
-                        class="text-gray-700 hover:text-primary-600 transition-colors"
-                        @click="isMobileMenuOpen = false"
-                    >
-                        Contact
-                    </NuxtLink>
-                </nav>
             </div>
         </UContainer>
     </header>
@@ -124,17 +168,18 @@
 
 <script setup lang="ts">
 const isMobileMenuOpen = ref(false);
-const config = useRuntimeConfig();
+// const config = useRuntimeConfig();
+const siteConfig = useAppConfig()?.siteConfig || {};
 
-const shopEnabled = computed(() => config.public.shopEnabled);
-const blogEnabled = computed(() => config.public.blogEnabled);
-const portfolioEnabled = computed(() => config.public.portfolioEnabled);
-const pageMode = computed(() => config.public?.pageMode || 'pages');
-const pageModeSingle = computed(() => pageMode.value === 'single');
+const shopEnabled = computed(() => siteConfig?.shopEnabled);
+const blogEnabled = computed(() => siteConfig?.blogEnabled);
+const portfolioEnabled = computed(() => siteConfig?.portfolioEnabled);
+const pageMode = computed(() => siteConfig?.pageMode || 'single');
+const pageModeSingle = computed(() => pageMode.value !== 'pages');
 
 // Configurações do efeito de scroll da logo
-const scrollY = ref(0);
-const MAX_LOGO_HEIGHT = 80; // Altura máxima da logo (no topo)
+const scrollY = ref(100);
+const MAX_LOGO_HEIGHT = 100; // Altura máxima da logo (no topo)
 const MIN_LOGO_HEIGHT = 48; // Altura mínima da logo (após rolar)
 const MAX_HEADER_HEIGHT = 100; // Altura máxima do header
 const MIN_HEADER_HEIGHT = 64; // Altura mínima do header
@@ -166,7 +211,12 @@ onMounted(() => {
     if (import.meta.client) {
         window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll(); // Atualiza o valor inicial
+        scrollY.value = window.scrollY;
     }
+});
+
+onBeforeMount(() => {
+    handleScroll(); // Atualiza o valor inicial
 });
 
 onBeforeUnmount(() => {
@@ -182,7 +232,7 @@ const scrollToComponent = (sectionId: string) => {
 
     let sectionElement: any = null;
 
-    if (import.meta.client && !import.meta.env.SSR) {
+    if (import.meta.client) {
         sectionElement = sectionElement || document.querySelector(`[data-ref-id="${sectionId}Ref"]`);
         sectionElement?.scrollIntoView({ behavior: 'smooth' });
     }
