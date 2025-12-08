@@ -226,5 +226,119 @@
             "en": "\"The brochure and ads showcase our school beautifully and have been instrumental in our recruitment efforts. We couldn't be more pleased.\"",
             "pt": "\"A brochura e anúncios mostram nossa escola lindamente e foram instrumentais em nossos esforços de recrutamento. Não poderíamos estar mais satisfeitos.\""
         }
+    },
+    {
+        "id": 7,
+        "slug": "community-center-website-redesign",
+        "title": {
+            "en": "Community Center - Website Redesign",
+            "pt": "Centro Comunitário - Redesign do Site"
+        },
+        "category": {
+            "en": "Web Design",
+            "pt": "Web Design"
+        },
+        "image": "/img/portfolio/jcc_annual_campaign.jpg",
+        "description": {
+            "en": "Complete website redesign for a community center focusing on user experience and modern aesthetics.",
+            "pt": "Redesign completo do site para um centro comunitário focando na experiência do usuário e estética moderna."
+        },
+        "client": "Vancouver Community Center",
+        "aboutClient": {
+            "en": "Vancouver Community Center serves diverse populations with recreational and educational programs.",
+            "pt": "O Centro Comunitário de Vancouver atende populações diversas com programas recreativos e educacionais."
+        },
+        "problem": {
+            "en": "The existing website was outdated, difficult to navigate, and didn't effectively showcase the center's programs and services.",
+            "pt": "O site existente estava desatualizado, difícil de navegar e não mostrava efetivamente os programas e serviços do centro."
+        },
+        "solution": {
+            "en": "We designed and developed a modern, responsive website with intuitive navigation, online registration capabilities, and engaging content presentation.",
+            "pt": "Projetamos e desenvolvemos um site moderno e responsivo com navegação intuitiva, recursos de registro online e apresentação de conteúdo envolvente."
+        },
+        "results": {
+            "en": "Website traffic increased by 200% and online registrations grew by 150%. User satisfaction improved significantly based on feedback surveys.",
+            "pt": "O tráfego do site aumentou em 200% e os registros online cresceram em 150%. A satisfação do usuário melhorou significativamente com base em pesquisas de feedback."
+        },
+        "feedback": {
+            "en": "\"Our new website has transformed how we connect with our community. The design is beautiful and functional.\"",
+            "pt": "\"Nosso novo site transformou a forma como nos conectamos com nossa comunidade. O design é bonito e funcional.\""
+        }
+    },
+    {
+        "id": 8,
+        "slug": "nonprofit-annual-report",
+        "title": {
+            "en": "Non-Profit Annual Report Design",
+            "pt": "Design do Relatório Anual de ONG"
+        },
+        "category": {
+            "en": "Print Design",
+            "pt": "Print Design"
+        },
+        "image": "/img/portfolio/lchaim_brochure.jpg",
+        "description": {
+            "en": "Visually compelling annual report design showcasing impact and achievements for a non-profit organization.",
+            "pt": "Design de relatório anual visualmente atraente mostrando impacto e conquistas para uma organização sem fins lucrativos."
+        },
+        "client": "Hope Foundation",
+        "aboutClient": {
+            "en": "Hope Foundation is dedicated to supporting underprivileged communities through education and healthcare initiatives.",
+            "pt": "A Fundação Hope é dedicada a apoiar comunidades carentes através de iniciativas de educação e saúde."
+        },
+        "problem": {
+            "en": "The organization needed to communicate their annual achievements, financial transparency, and impact stories to donors and stakeholders in an engaging format.",
+            "pt": "A organização precisava comunicar suas conquistas anuais, transparência financeira e histórias de impacto para doadores e partes interessadas em um formato envolvente."
+        },
+        "solution": {
+            "en": "We designed a visually rich annual report with infographics, impactful photography, and clear data visualization that told their story compellingly.",
+            "pt": "Projetamos um relatório anual visualmente rico com infográficos, fotografia impactante e visualização clara de dados que contou sua história de forma convincente."
+        },
+        "results": {
+            "en": "Donor engagement increased by 45% after report distribution. The report received praise for its clarity and visual appeal from board members and major donors.",
+            "pt": "O engajamento de doadores aumentou em 45% após a distribuição do relatório. O relatório recebeu elogios por sua clareza e apelo visual de membros do conselho e grandes doadores."
+        },
+        "feedback": {
+            "en": "\"This annual report truly captures the heart of our mission. It's been our most effective communication tool with donors.\"",
+            "pt": "\"Este relatório anual realmente captura o coração de nossa missão. Foi nossa ferramenta de comunicação mais eficaz com doadores.\""
+        }
+    },
+    {
+        "id": 9,
+        "slug": "charity-gala-event-materials",
+        "title": {
+            "en": "Charity Gala - Event Materials",
+            "pt": "Gala Beneficente - Materiais do Evento"
+        },
+        "category": {
+            "en": "Event Marketing",
+            "pt": "Event Marketing"
+        },
+        "image": "/img/portfolio/jcc_sports_dinner.jpg",
+        "description": {
+            "en": "Complete event branding and materials package for a charity gala including invitations, programs, and signage.",
+            "pt": "Pacote completo de branding e materiais para um gala beneficente incluindo convites, programas e sinalização."
+        },
+        "client": "Children's Aid Society",
+        "aboutClient": {
+            "en": "Children's Aid Society works to protect and support vulnerable children and families in the community.",
+            "pt": "A Sociedade de Auxílio à Criança trabalha para proteger e apoiar crianças e famílias vulneráveis na comunidade."
+        },
+        "problem": {
+            "en": "The organization needed elegant, cohesive event materials that would create a memorable experience and encourage generous donations at their annual fundraising gala.",
+            "pt": "A organização precisava de materiais de evento elegantes e coesos que criassem uma experiência memorável e incentivassem doações generosas em seu gala anual de arrecadação de fundos."
+        },
+        "solution": {
+            "en": "We developed a complete event branding package including save-the-dates, formal invitations, event programs, table signage, and digital displays that created a sophisticated atmosphere.",
+            "pt": "Desenvolvemos um pacote completo de branding para o evento incluindo save-the-dates, convites formais, programas do evento, sinalização de mesa e displays digitais que criaram uma atmosfera sofisticada."
+        },
+        "results": {
+            "en": "The gala raised 60% more than the previous year. Attendees praised the professional presentation and cohesive design throughout the event.",
+            "pt": "O gala arrecadou 60% mais que o ano anterior. Os participantes elogiaram a apresentação profissional e o design coeso durante todo o evento."
+        },
+        "feedback": {
+            "en": "\"Every detail was perfect. The materials set the tone for an incredible evening and helped us exceed our fundraising goals.\"",
+            "pt": "\"Cada detalhe foi perfeito. Os materiais definiram o tom para uma noite incrível e nos ajudaram a superar nossas metas de arrecadação.\""
+        }
     }
 ]
