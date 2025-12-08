@@ -1,19 +1,30 @@
 <template>
-  <header class="bg-white sticky top-0 z-50 shadow-sm">
+  <header 
+    class="bg-white sticky top-0 z-50"
+    :style="headerStyle"
+  >
     <UContainer>
       <!-- Desktop Header -->
-      <div class="hidden md:flex flex-col items-center py-4">
-        <!-- Logo -->
-        <NuxtLink to="/" class="flex items-center mb-4">
-          <img
-            src="@/assets/img/logo.svg"
-            alt="Creative Kibbutz"
-            class="h-24 w-auto"
-          />
-        </NuxtLink>
+      <div class="hidden md:block relative" :style="{ height: headerHeight }">
+        <!-- Logo - uses transform for smooth animation -->
+        <div 
+          class="absolute will-change-transform"
+          :style="logoWrapperStyle"
+        >
+          <NuxtLink to="/" class="block">
+            <img
+              src="@/assets/img/logo.svg"
+              alt="Creative Kibbutz"
+              class="h-28 w-auto"
+            />
+          </NuxtLink>
+        </div>
 
         <!-- Navigation -->
-        <nav class="flex items-center justify-center gap-6 text-sm">
+        <nav
+          class="absolute right-0 flex items-center gap-6 text-sm will-change-transform"
+          :style="navStyle"
+        >
           <NuxtLink to="/" class="text-gray-700 hover:text-primary-600 transition-colors">
             Home
           </NuxtLink>
@@ -61,7 +72,7 @@
         </nav>
       </div>
 
-      <!-- Mobile Header -->
+      <!-- Mobile Header (no animation) -->
       <div class="flex items-center justify-between w-full md:hidden py-3">
         <NuxtLink to="/" class="flex items-center">
           <img
@@ -141,6 +152,8 @@
 </template>
 
 <script setup lang="ts">
+import { useScrollProgress } from '~/composables/useScrollProgress';
+
 const isMobileMenuOpen = ref(false);
 const config = useRuntimeConfig();
 
@@ -149,6 +162,43 @@ const blogEnabled = computed(() => config.public.blogEnabled);
 const portfolioEnabled = computed(() => config.public.portfolioEnabled);
 const pageMode = computed(() => config.public?.pageMode || 'pages');
 const pageModeSingle = computed(() => pageMode.value === 'single');
+
+const { progress } = useScrollProgress(120);
+
+const interpolate = (start: number, end: number, p: number) => {
+  return start + (end - start) * p;
+};
+
+const headerHeight = computed(() => {
+  const height = interpolate(180, 70, progress.value);
+  return `${height}px`;
+});
+
+const headerStyle = computed(() => ({
+  boxShadow: progress.value > 0.1 ? `0 2px 8px rgba(0,0,0,${interpolate(0, 0.1, progress.value)})` : 'none',
+}));
+
+const logoWrapperStyle = computed(() => {
+  const scale = interpolate(1, 0.4, progress.value);
+  const leftPos = interpolate(50, 2, progress.value);
+  const translateY = interpolate(20, 15, progress.value);
+  
+  return {
+    transform: `translateX(-50%) translateY(${translateY}px) scale(${scale})`,
+    transformOrigin: 'center top',
+    left: `${leftPos}%`,
+  };
+});
+
+const navStyle = computed(() => {
+  const translateY = interpolate(130, 25, progress.value);
+  const leftPos = interpolate(50, 65, progress.value);
+  
+  return {
+    transform: `translateX(-50%) translateY(${translateY}px)`,
+    left: `${leftPos}%`,
+  };
+});
 
 const scrollToComponent = (sectionId: string) => {
   if (!sectionId || !sectionId.trim()) return;
