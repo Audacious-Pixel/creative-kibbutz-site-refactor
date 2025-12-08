@@ -18,8 +18,8 @@
             <NuxtLink
             to="/"
             :class="[
-                'transition-all duration-300 items-center',
-                'hidden md:flex',  // hide this logo on mobile
+                'transition-all duration-500 ease-out items-center',
+                'hidden md:flex',
                 isCompact
                 ? 'md:self-auto md:mr-auto'
                 : 'md:self-center md:w-full md:justify-center'
@@ -28,13 +28,12 @@
           <img
             src="@/assets/img/logo.svg"
             alt="Creative Kibbutz"
-            :class="[
-              'transition-all duration-300 ease-out',
-              isCompact
-                ? 'md:h-12 md:w-auto'
-                : 'md:w-full md:max-w-5xl md:h-auto',
-              'w-48 h-auto md:w-auto'
-            ]"
+            class="will-change-[height,width] transition-[height,width,max-width] duration-500 ease-out"
+            :style="{
+              height: isCompact ? '3rem' : '10rem',
+              width: 'auto',
+              maxWidth: isCompact ? 'none' : '64rem'
+            }"
           />
         </NuxtLink>
 
