@@ -23,9 +23,9 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="text-center group cursor-pointer">
                         <div class="flex justify-center items-center h-74 mb-4 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-2">
-                            <img src="/icons/team.svg" class="w-72 h-auto" /> 
+                            <img src="/icons/team.svg" class="w-72 h-auto" />
                         </div>
-                        
+
                         <h3 class="text-xl font-semibold mb-2 transition-colors duration-300 group-hover:text-[#2B4C7E]">
                             Talented Dedicated Team
                         </h3>
@@ -36,9 +36,9 @@
 
                     <div class="text-center group cursor-pointer">
                         <div class="flex justify-center items-center h-74 mb-4 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-2">
-                            <img src="/icons/our-model.svg" class="w-72 h-auto" /> 
+                            <img src="/icons/our-model.svg" class="w-72 h-auto" />
                         </div>
-                        
+
                         <h3 class="text-xl font-semibold mb-2 transition-colors duration-300 group-hover:text-[#2B4C7E]">
                             Creative Kibbutz Model
                         </h3>
@@ -49,9 +49,9 @@
 
                     <div class="text-center group cursor-pointer">
                         <div class="flex justify-center items-center h-74 mb-4 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-2">
-                            <img src="/icons/hit-ground-running.svg" class="w-72 h-auto" /> 
+                            <img src="/icons/hit-ground-running.svg" class="w-72 h-auto" />
                         </div>
-                        
+
                         <h3 class="text-xl font-semibold mb-2 transition-colors duration-300 group-hover:text-[#2B4C7E]">
                             Ground Running Ready
                         </h3>
@@ -66,9 +66,9 @@
         <!-- Building Community Through Creativity Section -->
         <section class="relative py-24 overflow-hidden">
             <div class="absolute inset-0">
-                <img 
-                    :src="heroBgImage" 
-                    alt="Creative work showcase" 
+                <img
+                    :src="heroBgImage"
+                    alt="Creative work showcase"
                     class="absolute inset-0 w-full h-full object-cover object-right"
                 />
                 <div class="absolute inset-0 bg-gradient-to-r from-[#2B4C7E] via-[#2B4C7E]/95 via-55% to-[#2B4C7E]/30"></div>
@@ -92,9 +92,9 @@
                         <p class="text-lg text-white/90 mb-8 leading-relaxed">
                             From small community initiatives to large international NGOs, we tailor our approach to fit your unique needs and goals.
                         </p>
-                        <UButton 
+                        <UButton
                             @click="scrollToSection('portfolioSection')"
-                            size="xl" 
+                            size="xl"
                             class="bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold cursor-pointer"
                         >
                             View Our Work
@@ -119,9 +119,9 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                    <div 
-                        v-for="caseItem in featuredCases" 
-                        :key="caseItem.id" 
+                    <div
+                        v-for="caseItem in featuredCases"
+                        :key="caseItem.id"
                         class="group cursor-pointer"
                         @click="openModal(caseItem)"
                     >
@@ -181,6 +181,7 @@
                                 color="neutral"
                                 variant="ghost"
                                 @click="closeModal"
+                                class="cursor-pointer"
                             />
                         </div>
                     </template>
@@ -213,8 +214,8 @@
 </template>
 
 <script setup lang="ts">
-import ContactModule from '~/components/page-modules/contact-module.vue';
 import heroBgImage from '~/assets/img/hero-bg.webp';
+import ContactModule from '~/components/page-modules/contact-module.vue';
 
 const config = useRuntimeConfig();
 const pageMode = computed(() => config.public?.pageMode || 'pages');

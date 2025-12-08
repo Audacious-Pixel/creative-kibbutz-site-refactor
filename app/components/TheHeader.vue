@@ -1,6 +1,6 @@
 <template>
     <header
-        class="bg-white sticky top-0 z-50 transition-all duration-300 pt-3 md:max-h-[var(--header-min-height)]"
+        class="bg-white sticky top-0 z-50 transition-all duration-300 pt-3 md:max-h-(--header-min-height)"
         :style="{
             '--header-min-height': `${headerHeight}px`,
             '--logo-height': `${logoHeight}px`,
@@ -12,7 +12,7 @@
                     <img
                         src="@/assets/img/logo.svg"
                         alt="Creative Kibbutz"
-                        class="w-72 md:w-auto transition-all duration-300 ease-out h-[var(--logo-height)]"
+                        class="w-72 md:w-auto transition-all duration-300 ease-out h-(--logo-height)"
                     />
                 </NuxtLink>
 

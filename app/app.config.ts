@@ -1,6 +1,8 @@
 export default defineAppConfig({
     siteConfig: {
         siteName: 'Creative Kibbutz',
+        slogan: 'Marketing, Design, and Web Services for non-profit Organizations',
+        alterSlogan: 'Empowering non-profits with creative solutions for community growth.',
         pageModes: ['single', 'pages'],
         pageMode: 'single',
         contact: {
@@ -33,12 +35,12 @@ export default defineAppConfig({
             ],
             location: 'Canada',
         },
-        socialMedia: {
-            facebook: '',
-            instagram: '',
-            linkedin: '',
-            twitter: '',
-        },
+        socialMedia: [
+            { id: 'facebook', url: 'https://facebook.com', icon: 'mdi:facebook', show: false },
+            { id: 'instagram', url: 'https://instagram.com', icon: 'mdi:instagram', show: false },
+            { id: 'linkedin', url: 'https://linkedin.com', icon: 'mdi:linkedin', show: false },
+            { id: 'twitter', url: 'https://twitter.com', icon: 'mdi:twitter', show: false },
+        ],
         paymentMethods: [
             'American Express',
             'Apple Pay',
