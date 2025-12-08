@@ -1,6 +1,6 @@
 <template>
   <header
-    class="bg-white border-b border-gray-200 sticky top-0 z-50 transition-all duration-300"
+    class="bg-white sticky top-0 z-50 transition-all duration-300"
   >
     <UContainer>
 
@@ -48,7 +48,7 @@
           "
         >
           <NuxtLink to="/" class="text-gray-700 hover:text-primary-600 transition-colors">
-            {{ $t('nav.home') }}
+            Home
           </NuxtLink>
 
           <NuxtLink
@@ -56,7 +56,7 @@
             to="/pages/portfolio"
             class="text-gray-700 hover:text-primary-600 transition-colors"
           >
-            {{ $t('nav.portfolio') }}
+            Portfolio
           </NuxtLink>
 
           <NuxtLink
@@ -64,7 +64,7 @@
             to="/shop"
             class="text-gray-700 hover:text-primary-600 transition-colors"
           >
-            {{ $t('shop.title') }}
+            Shop
           </NuxtLink>
 
           <NuxtLink
@@ -72,7 +72,7 @@
             to="/blog"
             class="text-gray-700 hover:text-primary-600 transition-colors"
           >
-            {{ $t('blog.title') }}
+            Blog
           </NuxtLink>
 
           <NuxtLink
@@ -80,7 +80,7 @@
             to="/pages/contact"
             class="text-gray-700 hover:text-primary-600 transition-colors"
           >
-            {{ $t('nav.contact') }}
+            Contact
           </NuxtLink>
 
           <NuxtLink
@@ -89,7 +89,7 @@
             to="/#contact"
             class="text-gray-700 hover:text-primary-600 transition-colors"
           >
-            {{ $t('nav.contact') }}
+            Contact
           </NuxtLink>
         </nav>
 
@@ -121,7 +121,7 @@
             class="text-gray-700 hover:text-primary-600 transition-colors"
             @click="isMobileMenuOpen = false"
           >
-            {{ $t('nav.home') }}
+            Home
           </NuxtLink>
 
           <NuxtLink
@@ -130,7 +130,7 @@
             class="text-gray-700 hover:text-primary-600 transition-colors"
             @click="isMobileMenuOpen = false"
           >
-            {{ $t('nav.portfolio') }}
+            Portfolio
           </NuxtLink>
 
           <NuxtLink
@@ -139,7 +139,7 @@
             class="text-gray-700 hover:text-primary-600 transition-colors"
             @click="isMobileMenuOpen = false"
           >
-            {{ $t('shop.title') }}
+            Shop
           </NuxtLink>
 
           <NuxtLink
@@ -148,7 +148,7 @@
             class="text-gray-700 hover:text-primary-600 transition-colors"
             @click="isMobileMenuOpen = false"
           >
-            {{ $t('blog.title') }}
+            Blog
           </NuxtLink>
 
           <NuxtLink
@@ -157,7 +157,7 @@
             class="text-gray-700 hover:text-primary-600 transition-colors"
             @click="isMobileMenuOpen = false"
           >
-            {{ $t('nav.contact') }}
+            Contact
           </NuxtLink>
 
           <NuxtLink
@@ -166,7 +166,7 @@
             to="/#contact"
             class="text-gray-700 hover:text-primary-600 transition-colors"
           >
-            {{ $t('nav.contact') }}
+            Contact
           </NuxtLink>
         </nav>
       </div>

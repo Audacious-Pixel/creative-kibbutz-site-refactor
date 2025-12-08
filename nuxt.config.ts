@@ -25,37 +25,7 @@ export default defineNuxtConfig({
 
     modules: [
         '@nuxt/ui',
-        '@nuxtjs/i18n',
-        //
     ],
-
-    i18n: {
-        // vueI18n: './nuxt-i18n.js',
-        locales: [
-            {
-                code: 'en',
-                name: 'English',
-                file: 'en.json',
-            },
-            {
-                code: 'pt',
-                name: 'Português',
-                file: 'pt.json',
-            },
-        ],
-        langDir: 'locales', // inside /i18n directory
-        defaultLocale: 'en',
-        strategy: 'no_prefix',
-        detectBrowserLanguage: {
-            useCookie: true,
-            cookieKey: 'i18n_redirected',
-            redirectOn: 'root',
-            alwaysRedirect: false,
-            fallbackLocale: 'en',
-            cookieSecure: false,
-            cookieCrossOrigin: false,
-        },
-    },
 
     colorMode: {
         preference: 'light',

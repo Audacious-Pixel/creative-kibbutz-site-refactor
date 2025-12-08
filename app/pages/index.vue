@@ -5,86 +5,83 @@
             <UContainer>
                 <div class="max-w-3xl mx-auto text-center">
                     <h1 class="text-4xl font-bold mb-6">
-                        {{ $t('hero.title') }}
+                        Your Partner in Community Success!
                     </h1>
                     <p class="text-2xl mb-10">
-                        {{ $t('hero.subtitle') }}
+                        Marketing, Design, and Web Services for non-profit Organizations
                     </p>
-                    <!-- <p class="text-lg mb-8 text-primary-100">
-                        {{ $t('hero.description') }}
-                    </p> -->
                     <UButton :to="contactFormLink" size="xl" color="info" variant="solid">
-                        {{ $t('hero.cta') }}
+                        Schedule a call
                     </UButton>
                 </div>
             </UContainer>
         </section>
 
-        <!-- Features Section -->
-        <section class="pb-20">
-            <UContainer class="border-white">
-                <!-- <div class="text-center mb-16">
+        <!-- Building Community Through Creativity Section -->
+        <section class="py-20 bg-gray-50">
+            <UContainer>
+                <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold mb-4">
-                        {{ $t('features.title') }}
+                        Building Community Through Creativity
                     </h2>
                     <p class="text-xl text-gray-600">
-                        {{ $t('features.description') }}
+                        Amplifying organizational voices and connecting with audiences meaningfully.
                     </p>
-                </div> -->
+                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-none shadow-none">
-                    <UCard class=" border-0 text-center border-none shadow-none">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
                         <div class="flex justify-center items-center h-74 mb-4">
                             <img src="/icons/team.svg" class="w-72 h-auto" /> 
                         </div>
                         
                         <h3 class="text-xl font-semibold mb-2">
-                            {{ $t('features.team.title') }}
+                            Talented Dedicated Team
                         </h3>
-                        <p class="text-gray-600 ">
-                            {{ $t('features.team.description') }}
+                        <p class="text-gray-600">
+                            Access to marketing staff, designers, and video editors without hiring overhead
                         </p>
-                    </UCard>
+                    </div>
 
-                    <UCard class=" border-0 text-center">
+                    <div class="text-center">
                         <div class="flex justify-center items-center h-74 mb-4">
                             <img src="/icons/our-model.svg" class="w-72 h-auto" /> 
                         </div>
                         
                         <h3 class="text-xl font-semibold mb-2">
-                            {{ $t('features.model.title') }}
+                            Creative Kibbutz Model
                         </h3>
-                        <p class="text-gray-600 ">
-                            {{ $t('features.model.description') }}
+                        <p class="text-gray-600">
+                            Ongoing custom solutions with flexibility and consistency
                         </p>
-                    </UCard>
+                    </div>
 
-                    <UCard class=" border-0 text-center">
+                    <div class="text-center">
                         <div class="flex justify-center items-center h-74 mb-4">
                             <img src="/icons/hit-ground-running.svg" class="w-72 h-auto" /> 
                         </div>
                         
                         <h3 class="text-xl font-semibold mb-2">
-                            {{ $t('features.ready.title') }}
+                            Ground Running Ready
                         </h3>
-                        <p class="text-gray-600 ">
-                            {{ $t('features.ready.description') }}
+                        <p class="text-gray-600">
+                            Experienced team prepared to deliver immediately
                         </p>
-                    </UCard>
+                    </div>
 
                 </div>
             </UContainer>
         </section>
 
         <!-- Portfolio Preview -->
-        <section class="bg-gray-50 py-20">
+        <section class="py-20">
             <UContainer>
                 <div class="text-center mb-12">
                     <h2 class="text-4xl font-bold mb-4">
-                        {{ $t('portfolio.title') }}
+                        Our Success Cases
                     </h2>
                     <p class="text-xl text-gray-600">
-                        {{ $t('portfolio.description') }}
+                        Custom-made projects for community organizations
                     </p>
                 </div>
 
@@ -94,7 +91,7 @@
                             <img
                                 v-if="caseItem?.image"
                                 :src="caseItem?.image"
-                                :alt="caseItem.title[locale]"
+                                :alt="caseItem.title.en"
                                 class="rounded-xl max-w-5xl mx-auto w-10/12"
                             />
                             <div
@@ -104,19 +101,19 @@
                                 <UIcon name="i-heroicons-photo" class="w-16 h-16 text-gray-400" />
                             </div>
                             <UBadge color="primary" variant="soft" class="mb-2">
-                                {{ caseItem.category[locale] }}
+                                {{ caseItem.category.en }}
                             </UBadge>
                             <h3 class="text-lg font-semibold mb-2">
-                                {{ caseItem.title[locale] }}
+                                {{ caseItem.title.en }}
                             </h3>
                             <p class="text-gray-600 mb-4">
-                                {{ caseItem.description[locale] }}
+                                {{ caseItem.description.en }}
                             </p>
                             <NuxtLink
                                 :to="`/pages/portfolio/case/${caseItem.slug}`"
                                 class="text-primary-600 hover:text-primary-800 font-semibold inline-flex items-center gap-2"
                             >
-                                {{ $t('portfolio.viewCase') }}
+                                View Case
                                 <UIcon name="i-heroicons-arrow-right" />
                             </NuxtLink>
                         </UCard>
@@ -125,25 +122,15 @@
 
                 <div class="text-center">
                     <UButton to="/pages/portfolio" size="lg" variant="outline">
-                        {{ $t('nav.portfolio') }}
+                        Portfolio
                     </UButton>
                 </div>
             </UContainer>
         </section>
 
+        <!-- Contact Section -->
         <section v-if="pageModeSingle" class="bg-gray-200 py-20" ref="homeContactRef" data-ref-id="homeContactRef">
-            <UContainer>
-                <div class="text-center max-w-3xl mx-auto">
-                    <h1 class="text-5xl font-bold mb-6">
-                        {{ $t('contact.title') }}
-                    </h1>
-                    <p class="text-xl">
-                        {{ $t('cta.description') }}
-                    </p>
-                </div>
-
-                <ContactModule />
-            </UContainer>
+            <ContactModule />
         </section>
 
         <!-- CTA Section -->
@@ -151,13 +138,13 @@
             <UContainer>
                 <div class="text-center max-w-2xl mx-auto">
                     <h2 class="text-4xl font-bold mb-4">
-                        {{ $t('cta.title') }}
+                        Let's connect!
                     </h2>
                     <p class="text-xl mb-8">
-                        {{ $t('cta.description') }}
+                        Contact us to schedule an initial consultation
                     </p>
                     <UButton :to="contactFormLink" size="xl" color="info" variant="solid" class="cursor-pointer">
-                        {{ $t('hero.cta') }}
+                        Schedule a call
                     </UButton>
                 </div>
             </UContainer>
@@ -168,14 +155,6 @@
 <script setup lang="ts">
 import ContactModule from '~/components/page-modules/contact-module.vue';
 
-const { locale } = useI18n();
-
-// const oldSiteConfig = await import('~/data/old-site-config.json').then((m) => m.default);
-// const pageMode = computed(() => oldSiteConfig?.pageMode);
-
-// const appConfig = useAppConfig();
-// const siteConfig = appConfig?.siteConfig || {};
-
 const config = useRuntimeConfig();
 const pageMode = computed(() => config.public?.pageMode || 'pages');
 const pageModeSingle = computed(() => pageMode.value === 'single');
@@ -183,31 +162,6 @@ const contactFormLink = computed(() => (pageModeSingle.value ? '/#contact' : '/p
 
 const pageContainer = ref<HTMLElement | null>(null);
 const homeContactRef = ref<HTMLElement | null>(null);
-const refs = computed(() => ({
-    homeContact: homeContactRef.value,
-}));
-
-const scrollToComponent = (sectionId: string) => {
-    if (!sectionId || !sectionId.trim()) {
-        if (import.meta.client && !import.meta.env.SSR) {
-            console.log('return');
-        }
-        return;
-    }
-
-    let _refs: any = refs.value;
-
-    if (!(sectionId in _refs)) {
-        return;
-    }
-
-    let sectionElement: any = _refs[sectionId] ?? null;
-
-    if (import.meta.client && !import.meta.env.SSR) {
-        sectionElement = sectionElement || document.querySelector(`[data-ref-id="${sectionId}Ref"]`);
-        sectionElement?.scrollIntoView({ behavior: 'smooth' });
-    }
-};
 
 const casesData: any | any[] = await import('~/data/cases.json').then((m) => m.default);
 

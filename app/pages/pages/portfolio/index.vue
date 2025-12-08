@@ -5,10 +5,10 @@
             <UContainer>
                 <div class="text-center max-w-3xl mx-auto">
                     <h1 class="text-5xl font-bold mb-6">
-                        {{ $t('portfolio.title') }}
+                        Our Success Cases
                     </h1>
                     <p class="text-xl">
-                        {{ $t('portfolio.description') }}
+                        Custom-made projects for community organizations
                     </p>
                 </div>
             </UContainer>
@@ -30,7 +30,7 @@
 
                 <div class="mb-8 flex flex-wrap gap-4">
                     <UButton :variant="!selectedCategory ? 'solid' : 'soft'" @click="caseFilter.category = ''">
-                        {{ $t('shop.allCategories') }}
+                        All Categories
                     </UButton>
 
                     <UButton
@@ -50,13 +50,13 @@
                         <UContainer>
                             <div class="text-center max-w-2xl mx-auto">
                                 <h2 class="text-2xl font-bold mb-4">
-                                    {{ $t('shop.nothingFound') }}
+                                    Nothing found
                                 </h2>
                                 <p class="text-lg text-gray-600 line-clamp-3 mb-2">
-                                    {{ $t('shop.nothingFound') }}
+                                    No results match your search
                                 </p>
                                 <UButton @click="clearFilters">
-                                    {{ $t('shop.clearFilters') }}
+                                    Clear filters
                                 </UButton>
                             </div>
                         </UContainer>
@@ -73,7 +73,7 @@
                                     <img
                                         v-if="caseItem?.image"
                                         :src="caseItem?.image"
-                                        :alt="caseItem.title[locale]"
+                                        :alt="caseItem.title.en"
                                         class="rounded-xl max-w-5xl mx-auto w-10/12"
                                     />
                                     <div
@@ -85,21 +85,21 @@
                                 </NuxtLink>
 
                                 <UBadge color="primary" variant="soft" class="mb-3">
-                                    {{ caseItem.category[locale] }}
+                                    {{ caseItem.category.en }}
                                 </UBadge>
                                 <NuxtLink :to="`/pages/portfolio/case/${caseItem.slug}`">
                                     <h3 class="text-xl font-semibold mb-3">
-                                        {{ caseItem.title[locale] }}
+                                        {{ caseItem.title.en }}
                                     </h3>
                                 </NuxtLink>
                                 <p class="text-gray-600 mb-4 line-clamp-3">
-                                    {{ caseItem.description[locale] }}
+                                    {{ caseItem.description.en }}
                                 </p>
                                 <NuxtLink
                                     :to="`/pages/portfolio/case/${caseItem.slug}`"
                                     class="text-primary-600 hover:text-primary-800 font-semibold inline-flex items-center gap-2"
                                 >
-                                    {{ $t('portfolio.viewCase') }}
+                                    View Case
                                     <UIcon name="i-heroicons-arrow-right" />
                                 </NuxtLink>
                             </UCard>
@@ -134,13 +134,13 @@
                         <UContainer>
                             <div class="text-center max-w-2xl mx-auto">
                                 <h2 class="text-2xl font-bold mb-4">
-                                    {{ $t('shop.nothingFound') }}
+                                    Nothing found
                                 </h2>
                                 <p class="text-lg text-gray-600 line-clamp-3 mb-2">
-                                    {{ $t('shop.nothingFound') }}
+                                    No results match your search
                                 </p>
                                 <UButton @click="clearFilters">
-                                    {{ $t('shop.clearFilters') }}
+                                    Clear filters
                                 </UButton>
                             </div>
                         </UContainer>
@@ -159,7 +159,7 @@
                                     <img
                                         v-if="caseItem?.image"
                                         :src="caseItem?.image"
-                                        :alt="caseItem.title[locale]"
+                                        :alt="caseItem.title.en"
                                         class="rounded-xl object-cover object-center w-auto h-full"
                                     />
                                     <div
@@ -171,10 +171,10 @@
                                 </div>
 
                                 <UBadge color="primary" variant="soft" class="mb-3">
-                                    {{ caseItem.category[locale] }}
+                                    {{ caseItem.category.en }}
                                 </UBadge>
                                 <h3 class="text-xl font-semibold mb-3">
-                                    {{ caseItem.title[locale] }}
+                                    {{ caseItem.title.en }}
                                 </h3>
                             </UCard>
                         </div>
@@ -208,13 +208,13 @@
             <UContainer>
                 <div class="text-center max-w-2xl mx-auto">
                     <h2 class="text-3xl font-bold mb-4">
-                        {{ $t('cta.title') }}
+                        Let's connect!
                     </h2>
                     <p class="text-lg text-gray-600 mb-8">
-                        {{ $t('cta.description') }}
+                        Contact us to schedule an initial consultation
                     </p>
                     <UButton :to="contactFormLink" size="lg" color="primary" class="cursor-pointer">
-                        {{ $t('hero.cta') }}
+                        Schedule a call
                     </UButton>
                 </div>
             </UContainer>
@@ -223,10 +223,6 @@
 </template>
 
 <script setup lang="ts">
-import { useState } from 'nuxt/app';
-
-const { locale, t } = useI18n();
-
 const casesData = await import('~/data/cases.json').then((m) => m.default);
 
 const config = useRuntimeConfig();
@@ -266,7 +262,7 @@ const selectedCategory = computed<string | null>(() => caseFilter?.category || n
 
 const categories = computed<string[]>(() => {
     return [
-        ...new Set(casesData.map((c: any) => c.category['en'] ?? c.category[locale.value] ?? null).filter(Boolean)),
+        ...new Set(casesData.map((c: any) => c.category['en'] ?? null).filter(Boolean)),
     ];
 });
 
@@ -313,7 +309,7 @@ const casesToShow = computed(() => {
 });
 
 useHead({
-    title: `${t('portfolio.title')} - Creative Kibbutz`,
-    meta: [{ name: 'description', content: t('portfolio.description') }],
+    title: 'Our Success Cases - Creative Kibbutz',
+    meta: [{ name: 'description', content: 'Custom-made projects for community organizations' }],
 });
 </script>

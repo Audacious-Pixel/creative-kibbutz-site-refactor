@@ -1,14 +1,24 @@
 # Creative Kibbutz - Modern Website
 
 ## Project Overview
-Modern bilingual website for Creative Kibbutz built with Nuxt 4 + NuxtUI. The site features:
+Modern website for Creative Kibbutz built with Nuxt 4 + NuxtUI. The site features:
 - Portfolio showcase
 - Blog functionality (currently disabled)
 - Shop functionality (currently disabled)
-- Bilingual support (English/Portuguese) with i18n
+- English-only content (i18n removed)
 - Responsive design with Tailwind CSS
 
 ## Recent Changes
+**December 08, 2025** - UI and i18n changes:
+- Removed all translation-related code - site is now English only
+- Uninstalled @nuxtjs/i18n module
+- Removed LanguageSwitcher component from header and footer
+- Removed border line below the navigation
+- Removed borders from icons section (replaced UCard with plain divs)
+- Added "Building Community Through Creativity" section header and description
+- Simplified Contact Us section to just the contact form with no duplicate headers
+- Updated all components to use hardcoded English text instead of $t() translations
+
 **December 08, 2025** - Initial Replit setup:
 - Configured Nuxt to run on port 5000 with host 0.0.0.0
 - Added HMR configuration for Replit proxy support
