@@ -71,7 +71,7 @@
                     alt="Creative work showcase" 
                     class="absolute inset-0 w-full h-full object-cover object-right"
                 />
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-600/90 via-50% to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#2B4C7E] via-[#2B4C7E]/95 via-55% to-[#2B4C7E]/30"></div>
             </div>
             <UContainer class="relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
