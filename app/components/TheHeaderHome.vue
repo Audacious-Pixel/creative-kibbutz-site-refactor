@@ -180,23 +180,26 @@ const headerStyle = computed(() => ({
 
 const logoWrapperStyle = computed(() => {
   const scale = interpolate(1, 0.25, progress.value);
-  const leftPos = interpolate(50, 15, progress.value);
+  const leftPos = interpolate(50, 0, progress.value);
+  const translateX = interpolate(-50, 0, progress.value);
   const translateY = interpolate(20, 12, progress.value);
   
   return {
-    transform: `translateX(-50%) translateY(${translateY}px) scale(${scale})`,
-    transformOrigin: 'center top',
+    transform: `translateX(${translateX}%) translateY(${translateY}px) scale(${scale})`,
+    transformOrigin: 'left top',
     left: `${leftPos}%`,
   };
 });
 
 const navStyle = computed(() => {
   const translateY = interpolate(150, 18, progress.value);
-  const leftPos = interpolate(50, 88, progress.value);
+  const rightPos = interpolate(50, 0, progress.value);
+  const translateX = interpolate(50, 0, progress.value);
   
   return {
-    transform: `translateX(-50%) translateY(${translateY}px)`,
-    left: `${leftPos}%`,
+    transform: `translateX(${translateX}%) translateY(${translateY}px)`,
+    right: `${rightPos}%`,
+    left: 'auto',
   };
 });
 
