@@ -15,7 +15,7 @@
             <img
               src="@/assets/img/logo.svg"
               alt="Creative Kibbutz"
-              class="h-56 w-auto"
+              class="h-auto w-[85vw] max-w-4xl"
             />
           </NuxtLink>
         </div>
@@ -170,7 +170,7 @@ const interpolate = (start: number, end: number, p: number) => {
 };
 
 const headerHeight = computed(() => {
-  const height = interpolate(280, 70, progress.value);
+  const height = interpolate(200, 70, progress.value);
   return `${height}px`;
 });
 
@@ -191,7 +191,7 @@ const logoWrapperStyle = computed(() => {
 });
 
 const navStyle = computed(() => {
-  const translateY = interpolate(230, 22, progress.value);
+  const translateY = interpolate(150, 22, progress.value);
   const leftPos = interpolate(50, 92, progress.value);
   
   return {
