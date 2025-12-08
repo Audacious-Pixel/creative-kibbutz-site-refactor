@@ -1,43 +1,19 @@
 <template>
-  <header class="bg-white sticky top-0 z-50">
+  <header class="bg-white sticky top-0 z-50 shadow-sm">
     <UContainer>
       <!-- Desktop Header -->
-      <div class="hidden md:block">
-        <!-- Logo Container - Fixed height to prevent layout shift -->
-        <div 
-          class="flex justify-center overflow-hidden transition-[height,padding] duration-500 ease-out"
-          :style="{
-            height: logoContainerHeight,
-            paddingTop: isCompact ? '0.5rem' : '1.5rem',
-            paddingBottom: isCompact ? '0.5rem' : '1rem'
-          }"
-        >
-          <NuxtLink 
-            to="/" 
-            class="flex items-center transition-all duration-500 ease-out origin-top"
-            :class="isCompact ? 'absolute left-4' : 'relative'"
-          >
-            <img
-              src="@/assets/img/logo.svg"
-              alt="Creative Kibbutz"
-              class="transition-all duration-500 ease-out"
-              :style="{
-                height: isCompact ? '2.5rem' : '8rem',
-                width: 'auto'
-              }"
-            />
-          </NuxtLink>
-        </div>
+      <div class="hidden md:flex flex-col items-center py-4">
+        <!-- Logo -->
+        <NuxtLink to="/" class="flex items-center mb-4">
+          <img
+            src="@/assets/img/logo.svg"
+            alt="Creative Kibbutz"
+            class="h-24 w-auto"
+          />
+        </NuxtLink>
 
         <!-- Navigation -->
-        <nav
-          class="flex items-center justify-center gap-6 text-sm transition-all duration-500 ease-out"
-          :style="{
-            paddingBottom: isCompact ? '0.5rem' : '1rem',
-            marginTop: isCompact ? '-2.5rem' : '0',
-            marginLeft: isCompact ? '12rem' : '0'
-          }"
-        >
+        <nav class="flex items-center justify-center gap-6 text-sm">
           <NuxtLink to="/" class="text-gray-700 hover:text-primary-600 transition-colors">
             Home
           </NuxtLink>
@@ -173,37 +149,6 @@ const blogEnabled = computed(() => config.public.blogEnabled);
 const portfolioEnabled = computed(() => config.public.portfolioEnabled);
 const pageMode = computed(() => config.public?.pageMode || 'pages');
 const pageModeSingle = computed(() => pageMode.value === 'single');
-
-const scrollY = ref(0);
-const SCROLL_THRESHOLD = 100;
-
-const isCompact = computed(() => scrollY.value > SCROLL_THRESHOLD);
-
-const logoContainerHeight = computed(() => {
-  if (isCompact.value) {
-    return '3.5rem';
-  }
-  return '10rem';
-});
-
-const handleScroll = () => {
-  if (import.meta.client) {
-    scrollY.value = window.scrollY;
-  }
-};
-
-onMounted(() => {
-  if (import.meta.client) {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-  }
-});
-
-onBeforeUnmount(() => {
-  if (import.meta.client) {
-    window.removeEventListener('scroll', handleScroll);
-  }
-});
 
 const scrollToComponent = (sectionId: string) => {
   if (!sectionId || !sectionId.trim()) return;
