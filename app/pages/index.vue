@@ -226,7 +226,7 @@ const homeContactRef = ref<HTMLElement | null>(null);
 
 const casesData: any | any[] = await import('~/data/cases.json').then((m) => m.default);
 
-const featuredCases = computed(() => casesData.slice(0, 12));
+const featuredCases = computed(() => casesData.slice(0, 9));
 
 const isModalOpen = ref(false);
 const selectedCase = ref<any>(null);
