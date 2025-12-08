@@ -17,18 +17,9 @@
             </UContainer>
         </section>
 
-        <!-- Building Community Through Creativity Section -->
+        <!-- Icons Section (no title) -->
         <section class="py-20 bg-gray-50">
             <UContainer>
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4">
-                        Building Community Through Creativity
-                    </h2>
-                    <p class="text-xl text-gray-600">
-                        Amplifying organizational voices and connecting with audiences meaningfully.
-                    </p>
-                </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="text-center">
                         <div class="flex justify-center items-center h-74 mb-4">
@@ -68,12 +59,53 @@
                             Experienced team prepared to deliver immediately
                         </p>
                     </div>
-
                 </div>
             </UContainer>
         </section>
 
-        <!-- Portfolio Preview -->
+        <!-- Building Community Through Creativity Section -->
+        <section class="relative py-24 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500">
+                <img 
+                    :src="heroBgImage" 
+                    alt="Creative work showcase" 
+                    class="absolute right-0 top-0 h-full w-auto object-cover object-left opacity-90"
+                />
+            </div>
+            <UContainer class="relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-white">
+                        <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+                            Creative Agency for Non-Profits
+                        </span>
+                        <h2 class="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                            Building Community<br />
+                            <span class="text-amber-400">Through Creativity</span>
+                        </h2>
+                        <p class="text-lg text-white/90 mb-6 leading-relaxed">
+                            At Creative Kibbutz, we believe that non-profits deserve world-class design and marketing without the corporate price tag. Our name reflects our philosophy: a collective effort where creativity is shared and resources are optimized for the greater good.
+                        </p>
+                        <p class="text-lg text-white/90 mb-6 leading-relaxed">
+                            We are a team of strategists, designers, and developers who are passionate about social impact. We don't just deliver projects; we build partnerships that help your organization grow, reach more people, and make a bigger difference.
+                        </p>
+                        <p class="text-lg text-white/90 mb-8 leading-relaxed">
+                            From small community initiatives to large international NGOs, we tailor our approach to fit your unique needs and goals.
+                        </p>
+                        <UButton 
+                            to="/pages/portfolio" 
+                            size="xl" 
+                            class="bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold"
+                        >
+                            Learn More About Us
+                        </UButton>
+                    </div>
+                    <div class="hidden lg:block">
+                    </div>
+                </div>
+            </UContainer>
+        </section>
+
+        <!-- Portfolio Preview - Our Success Cases -->
         <section class="py-20">
             <UContainer>
                 <div class="text-center mb-12">
@@ -132,28 +164,12 @@
         <section v-if="pageModeSingle" class="bg-gray-200 py-20" ref="homeContactRef" data-ref-id="homeContactRef">
             <ContactModule />
         </section>
-
-        <!-- CTA Section -->
-        <section class="py-20 bg-primary-600 text-white">
-            <UContainer>
-                <div class="text-center max-w-2xl mx-auto">
-                    <h2 class="text-4xl font-bold mb-4">
-                        Let's connect!
-                    </h2>
-                    <p class="text-xl mb-8">
-                        Contact us to schedule an initial consultation
-                    </p>
-                    <UButton :to="contactFormLink" size="xl" color="info" variant="solid" class="cursor-pointer">
-                        Schedule a call
-                    </UButton>
-                </div>
-            </UContainer>
-        </section>
     </div>
 </template>
 
 <script setup lang="ts">
 import ContactModule from '~/components/page-modules/contact-module.vue';
+import heroBgImage from '~/assets/img/hero-bg.webp';
 
 const config = useRuntimeConfig();
 const pageMode = computed(() => config.public?.pageMode || 'pages');
