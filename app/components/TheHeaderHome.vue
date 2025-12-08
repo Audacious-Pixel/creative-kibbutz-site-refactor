@@ -179,7 +179,7 @@ const headerStyle = computed(() => ({
 }));
 
 const logoWrapperStyle = computed(() => {
-  const scale = interpolate(1, 0.25, progress.value);
+  const scale = interpolate(1, 0.33, progress.value);
   const leftPos = interpolate(50, 0, progress.value);
   const translateX = interpolate(-50, 0, progress.value);
   const translateY = interpolate(20, 12, progress.value);
