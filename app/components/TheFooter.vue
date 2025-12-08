@@ -5,49 +5,37 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4">Creative Kibbutz</h3>
                     <p class="text-gray-400">
-                        {{ $t('hero.subtitle') }}
+                        Marketing, Design, and Web Services for non-profit Organizations
                     </p>
                 </div>
 
                 <div>
-                    <h4 class="font-semibold mb-4">{{ $t('nav.home') }}</h4>
+                    <h4 class="font-semibold mb-4">Navigation</h4>
                     <nav class="flex flex-col gap-2">
                         <NuxtLink to="/" class="text-gray-400 hover:text-white transition-colors">
-                            {{ $t('nav.home') }}
+                            Home
                         </NuxtLink>
                         <NuxtLink to="/pages/portfolio" class="text-gray-400 hover:text-white transition-colors">
-                            {{ $t('nav.portfolio') }}
+                            Portfolio
                         </NuxtLink>
                         <NuxtLink to="/pages/contact" class="text-gray-400 hover:text-white transition-colors">
-                            {{ $t('nav.contact') }}
+                            Contact
                         </NuxtLink>
                     </nav>
                 </div>
 
                 <div>
-                    <h4 class="font-semibold mb-4">{{ $t('footer.newsletter') }}</h4>
+                    <h4 class="font-semibold mb-4">Get in Touch</h4>
                     <p class="text-gray-400 mb-4">
-                        {{ $t('cta.description') }}
+                        Contact us to schedule an initial consultation
                     </p>
                 </div>
             </div>
 
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-300 dark:text-gray-400">
-                <div class="mb-4 flex items-center justify-center gap-4">
-                    <LanguageSwitcher />
-                    <div class="h-6 w-px bg-gray-700" />
-                    <UColorModeSelect
-                        color="primary"
-                        variant="outline"
-                        :class="[
-                            'font-medium text-secondary dark:text-secondary bg-transparent border-none',
-                            'rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors px-2.5 py-1.5 text-sm gap-1.5 ring ring-inset ring-secondary/50 hover:bg-secondary/10 active:bg-secondary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary cursor-pointer',
-                        ]"
-                    />
-                </div>
                 <p>&copy; {{ new Date().getFullYear() }} Creative Kibbutz. All rights reserved.</p>
                 <NuxtLink to="/privacy" class="hover:text-white transition-colors mt-2 inline-block">
-                    {{ $t('footer.privacy') }}
+                    Privacy Policy
                 </NuxtLink>
             </div>
         </UContainer>
@@ -55,10 +43,4 @@
 </template>
 
 <script setup lang="ts">
-const appConfig = useAppConfig();
-
-if (import.meta.client) {
-    console.log('appConfig', appConfig);
-    console.log('f2_app_id', appConfig?.appData?.f2_app_id);
-}
 </script>

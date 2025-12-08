@@ -5,13 +5,13 @@
             <UContainer>
                 <div class="max-w-4xl mx-auto">
                     <UBadge color="neutral" variant="soft" size="lg" class="mb-4">
-                        {{ caseData.category[locale] }}
+                        {{ caseData.category.en }}
                     </UBadge>
                     <h1 class="text-5xl font-bold mb-6">
-                        {{ caseData.title[locale] }}
+                        {{ caseData.title.en }}
                     </h1>
                     <p class="text-xl">
-                        {{ caseData.description[locale] }}
+                        {{ caseData.description.en }}
                     </p>
                 </div>
             </UContainer>
@@ -24,7 +24,7 @@
                 <UContainer>
                     <div class="text-center">
                         <UButton to="/pages/portfolio" variant="ghost" icon="i-heroicons-arrow-left">
-                            {{ $t('nav.portfolio') }}
+                            Portfolio
                         </UButton>
                     </div>
                 </UContainer>
@@ -34,7 +34,7 @@
                 <img
                     v-if="caseData?.image"
                     :src="caseData?.image"
-                    :alt="caseData.title[locale]"
+                    :alt="caseData.title.en"
                     class="rounded-xl max-w-5xl mx-auto w-10/12"
                 />
                 <div
@@ -54,11 +54,11 @@
                     <div class="mb-8">
                         <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
                             <UIcon name="i-heroicons-building-office-2" class="text-primary-600" />
-                            {{ $t('case.aboutClient') }}
+                            About the Client
                         </h2>
                         <UCard>
                             <p class="text-lg text-gray-700">
-                                {{ caseData.aboutClient[locale] }}
+                                {{ caseData.aboutClient.en }}
                             </p>
                         </UCard>
                     </div>
@@ -67,11 +67,11 @@
                     <div class="mb-8">
                         <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
                             <UIcon name="i-heroicons-exclamation-circle" class="text-primary-600" />
-                            {{ $t('case.problem') }}
+                            Problem to Solve
                         </h2>
                         <UCard>
                             <p class="text-lg text-gray-700">
-                                {{ caseData.problem[locale] }}
+                                {{ caseData.problem.en }}
                             </p>
                         </UCard>
                     </div>
@@ -80,11 +80,11 @@
                     <div class="mb-8">
                         <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
                             <UIcon name="i-heroicons-light-bulb" class="text-primary-600" />
-                            {{ $t('case.solution') }}
+                            Proposed Solution
                         </h2>
                         <UCard>
                             <p class="text-lg text-gray-700">
-                                {{ caseData.solution[locale] }}
+                                {{ caseData.solution.en }}
                             </p>
                         </UCard>
                     </div>
@@ -93,11 +93,11 @@
                     <div class="mb-8">
                         <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
                             <UIcon name="i-heroicons-chart-bar" class="text-primary-600" />
-                            {{ $t('case.results') }}
+                            Results Achieved
                         </h2>
                         <UCard class="bg-green-50 border-green-200">
                             <p class="text-lg text-gray-700">
-                                {{ caseData.results[locale] }}
+                                {{ caseData.results.en }}
                             </p>
                         </UCard>
                     </div>
@@ -106,11 +106,11 @@
                     <div class="mb-8">
                         <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
                             <UIcon name="i-heroicons-chat-bubble-left-right" class="text-primary-600" />
-                            {{ $t('case.feedback') }}
+                            Partnership Feedback
                         </h2>
                         <UCard class="bg-primary-50 border-primary-200">
                             <blockquote class="text-lg italic text-gray-700">
-                                {{ caseData.feedback[locale] }}
+                                {{ caseData.feedback.en }}
                             </blockquote>
                         </UCard>
                     </div>
@@ -127,10 +127,10 @@
                             <UIcon name="i-heroicons-calendar-days" class="w-8 h-8 text-primary-600" />
                         </div>
                         <h2 class="text-4xl font-bold mb-4">
-                            {{ $t('case.scheduleContact.title') }}
+                            Schedule a contact with our specialist
                         </h2>
                         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                            {{ $t('case.scheduleContact.description') }}
+                            Fill in your details with the service you need, preferred date and time and we will contact you to schedule an appointment.
                         </p>
                     </div>
 
@@ -144,7 +144,7 @@
                                         Personal Information
                                     </h3>
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <UFormGroup :label="$t('contact.form.name')" name="name" required>
+                                        <UFormGroup label="Name" name="name" required>
                                             <UInput
                                                 v-model="scheduleForm.name"
                                                 icon="i-heroicons-user"
@@ -154,7 +154,7 @@
                                             />
                                         </UFormGroup>
 
-                                        <UFormGroup :label="$t('contact.form.email')" name="email" required>
+                                        <UFormGroup label="Email" name="email" required>
                                             <UInput
                                                 v-model="scheduleForm.email"
                                                 type="email"
@@ -165,7 +165,7 @@
                                             />
                                         </UFormGroup>
 
-                                        <UFormGroup :label="$t('contact.form.phone')" name="phone">
+                                        <UFormGroup label="Phone" name="phone">
                                             <UInput
                                                 v-model="scheduleForm.phone"
                                                 type="tel"
@@ -176,7 +176,7 @@
                                             />
                                         </UFormGroup>
 
-                                        <UFormGroup :label="$t('case.scheduleContact.service')" name="service" required>
+                                        <UFormGroup label="Service" name="service" required>
                                             <USelectMenu
                                                 v-model="scheduleForm.service"
                                                 :options="serviceOptions"
@@ -199,7 +199,7 @@
                                         Schedule Preferences
                                     </h3>
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <UFormGroup :label="$t('case.scheduleContact.date')" name="preferredDate">
+                                        <UFormGroup label="Preferred Date" name="preferredDate">
                                             <UInput
                                                 v-model="scheduleForm.preferredDate"
                                                 type="date"
@@ -210,7 +210,7 @@
                                             />
                                         </UFormGroup>
 
-                                        <UFormGroup :label="$t('case.scheduleContact.time')" name="preferredTime">
+                                        <UFormGroup label="Preferred Time" name="preferredTime">
                                             <USelectMenu
                                                 v-model="scheduleForm.preferredTime"
                                                 :options="timeSlots"
@@ -232,7 +232,7 @@
                                         <UIcon name="i-heroicons-chat-bubble-left-right" class="text-primary-600" />
                                         Additional Information
                                     </h3>
-                                    <UFormGroup :label="$t('contact.form.message')" name="message">
+                                    <UFormGroup label="Message" name="message">
                                         <UTextarea
                                             v-model="scheduleForm.message"
                                             :rows="5"
@@ -252,7 +252,7 @@
                                         icon="i-heroicons-paper-airplane"
                                         class="px-12"
                                     >
-                                        {{ $t('case.scheduleContact.submit') }}
+                                        Schedule Contact
                                     </UButton>
                                 </div>
                             </div>
@@ -283,7 +283,7 @@
             <UContainer>
                 <div class="text-center">
                     <UButton to="/pages/portfolio" variant="ghost" icon="i-heroicons-arrow-left">
-                        {{ $t('nav.portfolio') }}
+                        Portfolio
                     </UButton>
                 </div>
             </UContainer>
@@ -294,7 +294,7 @@
             <div class="text-center">
                 <h1 class="text-3xl font-bold mb-4">Case not found</h1>
                 <UButton to="/pages/portfolio">
-                    {{ $t('nav.portfolio') }}
+                    Portfolio
                 </UButton>
             </div>
         </UContainer>
@@ -305,8 +305,6 @@
 import { z } from 'zod';
 
 const route = useRoute();
-const { locale } = useI18n();
-const { t } = useI18n();
 const toast = useToast();
 
 const casesData = await import('~/data/cases.json').then((m) => m.default);
@@ -315,7 +313,6 @@ const caseData = computed(() => {
     return casesData.find((c) => c.slug === route.params.slug);
 });
 
-// Form Schema with Zod validation
 const formSchema = z.object({
     name: z.string().min(2, 'Name must be at least 2 characters'),
     email: z.string().email('Invalid email address'),
@@ -338,7 +335,6 @@ const scheduleForm = ref({
 
 const isSubmitting = ref(false);
 
-// Service options
 const serviceOptions = [
     'Branding & Logo Design',
     'Marketing Campaign',
@@ -352,7 +348,6 @@ const serviceOptions = [
     'Other',
 ];
 
-// Time slots
 const timeSlots = [
     '09:00 AM',
     '10:00 AM',
@@ -365,7 +360,6 @@ const timeSlots = [
     '05:00 PM',
 ];
 
-// Min date (today)
 const minDate = computed(() => {
     const today = new Date();
     return today.toISOString().split('T')[0];
@@ -375,18 +369,16 @@ const submitSchedule = async (event: any) => {
     isSubmitting.value = true;
 
     try {
-        // Simulate API call
         await new Promise((resolve) => setTimeout(resolve, 1500));
 
         toast.add({
-            title: t('case.scheduleContact.submit') + ' ✓',
+            title: 'Schedule Contact',
             description: 'Your contact request has been received. We will get back to you within 24 hours.',
             color: 'success',
             icon: 'i-heroicons-check-circle',
             timeout: 5000,
         });
 
-        // Reset form
         scheduleForm.value = {
             name: '',
             email: '',
@@ -409,7 +401,7 @@ const submitSchedule = async (event: any) => {
 };
 
 useHead({
-    title: caseData.value ? `${caseData.value.title[locale.value]} - Creative Kibbutz` : 'Case Not Found',
-    meta: [{ name: 'description', content: caseData.value?.description[locale.value] || '' }],
+    title: caseData.value ? `${caseData.value.title.en} - Creative Kibbutz` : 'Case Not Found',
+    meta: [{ name: 'description', content: caseData.value?.description.en || '' }],
 });
 </script>

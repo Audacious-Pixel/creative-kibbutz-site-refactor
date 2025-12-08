@@ -5,7 +5,6 @@
                 :transition="{
                     name: 'my',
                     mode: 'out-in',
-                    onBeforeEnter,
                 }"
             />
         </NuxtLayout>
@@ -20,12 +19,6 @@ useHead({
         lang: 'en',
     },
 });
-
-// const { finalizePendingLocaleChange } = useI18n();
-
-// const onBeforeEnter = async () => {
-//     await finalizePendingLocaleChange();
-// };
 </script>
 
 <style>
