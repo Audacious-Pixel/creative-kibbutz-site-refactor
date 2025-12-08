@@ -2,6 +2,7 @@ export function useScrollProgress(maxScroll: number = 150) {
   const scrollY = ref(0);
   const smoothProgress = ref(0);
   let rafId: number | null = null;
+  let isAnimating = false;
 
   const rawProgress = computed(() => {
     return Math.min(Math.max(scrollY.value / maxScroll, 0), 1);
@@ -18,16 +19,21 @@ export function useScrollProgress(maxScroll: number = 150) {
   };
 
   const animate = () => {
-    smoothProgress.value = lerp(smoothProgress.value, rawProgress.value, 0.15);
+    smoothProgress.value = lerp(smoothProgress.value, rawProgress.value, 0.12);
     
-    if (Math.abs(smoothProgress.value - rawProgress.value) > 0.001) {
+    if (Math.abs(smoothProgress.value - rawProgress.value) > 0.0001) {
       rafId = requestAnimationFrame(animate);
+    } else {
+      smoothProgress.value = rawProgress.value;
+      isAnimating = false;
+      rafId = null;
     }
   };
 
   const handleScroll = () => {
     updateScroll();
-    if (rafId === null) {
+    if (!isAnimating) {
+      isAnimating = true;
       rafId = requestAnimationFrame(animate);
     }
   };
