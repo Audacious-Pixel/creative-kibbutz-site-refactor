@@ -21,12 +21,12 @@
         <section class="py-20 bg-gray-50">
             <UContainer>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="text-center">
-                        <div class="flex justify-center items-center h-74 mb-4">
+                    <div class="text-center group cursor-pointer">
+                        <div class="flex justify-center items-center h-74 mb-4 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-2">
                             <img src="/icons/team.svg" class="w-72 h-auto" /> 
                         </div>
                         
-                        <h3 class="text-xl font-semibold mb-2">
+                        <h3 class="text-xl font-semibold mb-2 transition-colors duration-300 group-hover:text-[#2B4C7E]">
                             Talented Dedicated Team
                         </h3>
                         <p class="text-gray-600">
@@ -34,12 +34,12 @@
                         </p>
                     </div>
 
-                    <div class="text-center">
-                        <div class="flex justify-center items-center h-74 mb-4">
+                    <div class="text-center group cursor-pointer">
+                        <div class="flex justify-center items-center h-74 mb-4 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-2">
                             <img src="/icons/our-model.svg" class="w-72 h-auto" /> 
                         </div>
                         
-                        <h3 class="text-xl font-semibold mb-2">
+                        <h3 class="text-xl font-semibold mb-2 transition-colors duration-300 group-hover:text-[#2B4C7E]">
                             Creative Kibbutz Model
                         </h3>
                         <p class="text-gray-600">
@@ -47,12 +47,12 @@
                         </p>
                     </div>
 
-                    <div class="text-center">
-                        <div class="flex justify-center items-center h-74 mb-4">
+                    <div class="text-center group cursor-pointer">
+                        <div class="flex justify-center items-center h-74 mb-4 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-2">
                             <img src="/icons/hit-ground-running.svg" class="w-72 h-auto" /> 
                         </div>
                         
-                        <h3 class="text-xl font-semibold mb-2">
+                        <h3 class="text-xl font-semibold mb-2 transition-colors duration-300 group-hover:text-[#2B4C7E]">
                             Ground Running Ready
                         </h3>
                         <p class="text-gray-600">
