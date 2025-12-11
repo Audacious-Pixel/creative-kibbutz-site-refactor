@@ -233,7 +233,7 @@ import ContactModule from '~/components/page-modules/contact-module.vue';
 const siteConfig = useAppConfig()?.siteConfig || {};
 const pageMode = computed(() => siteConfig?.pageMode || 'single');
 const pageModeSingle = computed(() => pageMode.value === 'single');
-const contactFormLink = computed(() => (pageModeSingle.value ? '/#contact' : '/pages/contact'));
+const contactFormLink = "https://calendar.app.google/ZDZEHy1hHBSjPJhKA";
 
 const pageContainer = ref<HTMLElement | null>(null);
 const homeContactRef = ref<HTMLElement | null>(null);
