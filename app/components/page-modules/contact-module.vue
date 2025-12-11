@@ -87,7 +87,7 @@ const state = reactive<Partial<Schema>>({
 
 const isSubmitting = ref(false);
 
-const submitContact = async (event: FormSubmitEvent<Schema>) => {
+const submitContactOLD = async (event: FormSubmitEvent<Schema>) => {
     isSubmitting.value = true;
 
     try {
@@ -113,6 +113,39 @@ const submitContact = async (event: FormSubmitEvent<Schema>) => {
         isSubmitting.value = false;
     }
 };
+
+const submitContact = async () => {
+  isSubmitting.value = true;
+
+  try {
+    await fetch("https://formspree.io/f/xeoyrybj", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(state)
+    });
+
+    toast.add({
+      title: 'Success',
+      description: 'Your message has been sent.',
+      color: 'success'
+    });
+
+    Object.assign(state, { name: '', email: '', phone: '', message: '' });
+  } catch {
+    toast.add({
+      title: 'Error',
+      description: 'Could not send the form',
+      color: 'error'
+    });
+  } finally {
+    isSubmitting.value = false;
+  }
+};
+
+
+
+
+
 
 useHead({
     title: 'Contact Us - Creative Kibbutz',

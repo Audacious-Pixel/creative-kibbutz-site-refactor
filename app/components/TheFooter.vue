@@ -15,7 +15,7 @@
                         
                         <a
                             href="https://www.instagram.com/creativekibbutz/"
-                            @click.prevent="scrollToSection('portfolio')"
+                            
                             class="text-blue-200 hover:text-white transition-colors cursor-pointer"
                         >
                             <p class="font-semibold mb-4 text-blue-50">Follow us on Instagram</p>
