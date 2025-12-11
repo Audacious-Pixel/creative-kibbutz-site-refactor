@@ -155,9 +155,9 @@
                                     <UIcon name="i-heroicons-photo" class="w-16 h-16 text-gray-400" />
                                 </div>
                             </div>
-                            <UBadge color="primary" variant="soft" class="mb-2">
+                            <!-- <UBadge color="primary" variant="soft" class="mb-2">
                                 {{ caseItem.category.en }}
-                            </UBadge>
+                            </UBadge> -->
                             <h3 class="text-lg font-semibold mb-2">
                                 {{ caseItem.title.en }}
                             </h3>
@@ -180,9 +180,9 @@
                     <template #header>
                         <div class="flex justify-between items-start">
                             <div>
-                                <UBadge color="primary" variant="soft" class="mb-2">
+                                <!-- <UBadge color="primary" variant="soft" class="mb-2">
                                     {{ selectedCase.category.en }}
-                                </UBadge>
+                                </UBadge> -->
                                 <h2 class="text-2xl font-bold">
                                     {{ selectedCase.title.en }}
                                 </h2>
