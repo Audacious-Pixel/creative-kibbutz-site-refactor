@@ -74,7 +74,7 @@
                     class="absolute inset-0 w-full h-full object-cover object-right"
                 />
                 <div
-                    class="absolute inset-0 bg-linear-to-r from-[#2B4C7E] via-[#2B4C7E]/95 via-55% to-[#2B4C7E]/30"
+                    class="absolute inset-0 bg-linear-to-r from-[#3350A3] via-[#3350A3]/95 via-55% to-[#3350A3]/30"
                 ></div>
             </div>
             <UContainer class="relative z-10">

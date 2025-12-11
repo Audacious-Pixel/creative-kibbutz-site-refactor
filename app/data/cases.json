@@ -1,344 +1,344 @@
 [
     {
         "id": 1,
-        "slug": "lchaim-adult-day-centre-brochure",
+        "slug": "1",
         "title": {
-            "en": "L'Chaim Adult Day Centre Trifold Brochure",
-            "pt": "Brochura Trifold L'Chaim Adult Day Centre"
+            "en": "New Logo & Trifold Brochure",
+            "pt": ""
         },
         "category": {
             "en": "Print Design",
-            "pt": "Print Design"
+            "pt": ""
         },
         "image": "/img/portfolio/lchaim_brochure.jpg",
         "description": {
-            "en": "Professional trifold brochure design for L'Chaim Adult Day Centre showcasing their services and programs.",
-            "pt": "Design profissional de brochura trifold para o L'Chaim Adult Day Centre apresentando seus serviços e programas."
+            "en": "Logo refresh and trifold brochure presenting the center’s services with a clear, welcoming visual identity.",
+            "pt": ""
         },
         "client": "L'Chaim Adult Day Centre",
         "aboutClient": {
-            "en": "L'Chaim Adult Day Centre is a community organization providing support and activities for older adults.",
-            "pt": "L'Chaim Adult Day Centre é uma organização comunitária que fornece apoio e atividades para adultos mais velhos."
+            "en": "",
+            "pt": ""
         },
         "problem": {
-            "en": "The organization needed to communicate their diverse services and welcoming environment to potential clients and their families in a compelling and professional manner.",
-            "pt": "A organização precisava comunicar seus diversos serviços e ambiente acolhedor para clientes em potencial e suas famílias de forma atraente e profissional."
+            "en": "",
+            "pt": ""
         },
         "solution": {
-            "en": "We designed a vibrant trifold brochure that clearly organized their services, included warm photography, and highlighted the community aspect of their programs. The design balanced information hierarchy with visual appeal.",
-            "pt": "Projetamos uma brochura trifold vibrante que organizava claramente seus serviços, incluía fotografia calorosa e destacava o aspecto comunitário de seus programas. O design equilibrou a hierarquia de informações com apelo visual."
+            "en": "",
+            "pt": ""
         },
         "results": {
-            "en": "The brochure successfully increased awareness of L'Chaim's programs and became a key marketing tool for outreach. It received positive feedback for its professional appearance and clear communication of services.",
-            "pt": "A brochura aumentou com sucesso a conscientização sobre os programas da L'Chaim e se tornou uma ferramenta de marketing-chave para alcance. Recebeu feedback positivo por sua aparência profissional e comunicação clara dos serviços."
+            "en": "",
+            "pt": ""
         },
         "feedback": {
-            "en": "\"The brochure turned out beautifully! It perfectly represents our organization and has been very effective in introducing people to our services.\"",
-            "pt": "\"A brochura ficou linda! Representa perfeitamente nossa organização e foi muito eficaz em apresentar nossas serviços às pessoas.\""
+            "en": "",
+            "pt": ""
         }
     },
     {
         "id": 2,
-        "slug": "jcc-annual-campaign",
+        "slug": "2",
         "title": {
-            "en": "JCC of Greater Vancouver - Annual Campaign",
-            "pt": "JCC de Greater Vancouver - Campanha Anual"
+            "en": "Annual Campaign",
+            "pt": ""
         },
         "category": {
             "en": "Marketing & Branding",
-            "pt": "Marketing & Branding"
+            "pt": ""
         },
         "image": "/img/portfolio/jcc_annual_campaign.jpg",
         "description": {
-            "en": "Comprehensive annual campaign materials and marketing collateral for JCC of Greater Vancouver.",
-            "pt": "Materiais abrangentes de campanha anual e colateral de marketing para JCC de Greater Vancouver."
+            "en": "Concept development and full creative rollout for the organization’s annual campaign across digital and print channels.",
+            "pt": ""
         },
         "client": "JCC of Greater Vancouver",
         "aboutClient": {
-            "en": "JCC of Greater Vancouver is a vibrant community organization providing cultural, educational, and recreational programs for the Jewish community.",
-            "pt": "JCC de Greater Vancouver é uma organização comunitária vibrante que oferece programas culturais, educacionais e recreativos para a comunidade judaica."
+            "en": "",
+            "pt": ""
         },
         "problem": {
-            "en": "JCC needed to launch a unified annual campaign to promote their diverse programming, increase membership, and communicate their impact to the community.",
-            "pt": "JCC precisava lançar uma campanha anual unificada para promover sua programação diversa, aumentar a adesão e comunicar seu impacto à comunidade."
+            "en": "",
+            "pt": ""
         },
         "solution": {
-            "en": "We developed a cohesive campaign with consistent branding, compelling messaging, and multi-channel materials including print ads, social media assets, and promotional collateral.",
-            "pt": "Desenvolvemos uma campanha coesa com marca consistente, mensagens convincentes e materiais multicanal, incluindo anúncios impressos, ativos de mídia social e colateral promocional."
+            "en": "",
+            "pt": ""
         },
         "results": {
-            "en": "The campaign successfully increased membership sign-ups by 35% and generated significant engagement across all marketing channels. The unified branding strengthened JCC's community presence.",
-            "pt": "A campanha aumentou com sucesso as inscrições de membros em 35% e gerou engajamento significativo em todos os canais de marketing. A marca unificada fortaleceu a presença comunitária da JCC."
+            "en": "",
+            "pt": ""
         },
         "feedback": {
-            "en": "\"Creative Kibbutz's campaign exceeded our expectations. The creative direction was fresh and the execution was flawless.\"",
-            "pt": "\"A campanha da Creative Kibbutz superou nossas expectativas. A direção criativa foi fresca e a execução foi impecável.\""
+            "en": "",
+            "pt": ""
         }
     },
     {
         "id": 3,
-        "slug": "jcc-social-media-content",
+        "slug": "3",
         "title": {
-            "en": "JCC of Greater Vancouver - Social Media Content",
-            "pt": "JCC de Greater Vancouver - Conteúdo de Mídia Social"
+            "en": "Marketing & Social Media",
+            "pt": ""
         },
         "category": {
             "en": "Digital & Social Media",
-            "pt": "Digital & Social Media"
+            "pt": ""
         },
-        "image": "/img/portfolio/jcc_social_media.jpg",
+        "image": "/img/portfolio/naamat_canada_social.jpg",
         "description": {
-            "en": "Engaging social media content strategy and design for JCC's community engagement and program promotion.",
-            "pt": "Estratégia e design de conteúdo de mídia social envolvente para engajamento comunitário e promoção de programas da JCC."
+            "en": "Ongoing marketing support including fundraising campaigns, storytelling, and daily social media content for national impact.",
+            "pt": ""
         },
-        "client": "JCC of Greater Vancouver",
+        "client": "Na'amat Canada",
         "aboutClient": {
-            "en": "JCC of Greater Vancouver is a vibrant community organization providing cultural, educational, and recreational programs for the Jewish community.",
-            "pt": "JCC de Greater Vancouver é uma organização comunitária vibrante que oferece programas culturais, educacionais e recreativos para a comunidade judaica."
+            "en": "",
+            "pt": ""
         },
         "problem": {
-            "en": "JCC wanted to increase their social media presence, engage with community members more effectively, and showcase the variety of programs and events they offer.",
-            "pt": "JCC queria aumentar sua presença nas redes sociais, engajar-se com membros da comunidade de forma mais eficaz e mostrar a variedade de programas e eventos que oferece."
+            "en": "",
+            "pt": ""
         },
         "solution": {
-            "en": "We created a comprehensive social media content strategy with visually appealing graphics, consistent posting schedule, and engaging copy that highlighted events, programs, and community stories.",
-            "pt": "Criamos uma estratégia abrangente de conteúdo de mídia social com gráficos visualmente atraentes, cronograma de postagem consistente e cópia envolvente que destacava eventos, programas e histórias comunitárias."
+            "en": "",
+            "pt": ""
         },
         "results": {
-            "en": "Social media follower count increased by 150% within 6 months. Engagement rates tripled, and event attendance improved significantly.",
-            "pt": "A contagem de seguidores nas redes sociais aumentou em 150% em 6 meses. As taxas de engajamento triplicaram e a presença em eventos melhorou significativamente."
+            "en": "",
+            "pt": ""
         },
         "feedback": {
-            "en": "\"The creative team at Creative Kibbutz really understands our community and creates content that resonates with our audience.\"",
-            "pt": "\"A equipe criativa da Creative Kibbutz realmente entende nossa comunidade e cria conteúdo que ressoa com nosso público.\""
+            "en": "",
+            "pt": ""
         }
     },
     {
         "id": 4,
-        "slug": "liessin-high-school-logo",
+        "slug": "4",
         "title": {
-            "en": "Liessin High School - New Logo Design",
-            "pt": "Liessin High School - Design do Novo Logo"
+            "en": "Visual Identity - New Logo",
+            "pt": ""
         },
         "category": {
             "en": "Branding & Logo Design",
-            "pt": "Branding & Logo Design"
+            "pt": ""
         },
         "image": "/img/portfolio/liessin_logo.jpg",
         "description": {
-            "en": "Modern logo redesign for Liessin High School reflecting their institutional values and contemporary identity.",
-            "pt": "Redesenho de logo moderno para a Liessin High School refletindo seus valores institucionais e identidade contemporânea."
+            "en": "New visual identity for Liessin High School supported by a launch campaign designed to strengthen recognition and school pride.",
+            "pt": ""
         },
         "client": "Liessin High School",
         "aboutClient": {
-            "en": "Liessin High School is a prestigious Jewish educational institution committed to academic excellence and community values.",
-            "pt": "Liessin High School é uma instituição educacional judaica de prestígio comprometida com excelência acadêmica e valores comunitários."
+            "en": "",
+            "pt": ""
         },
         "problem": {
-            "en": "The school needed to modernize their visual identity while maintaining their institutional heritage and values. The existing logo felt dated and didn't reflect their contemporary educational approach.",
-            "pt": "A escola precisava modernizar sua identidade visual enquanto mantinha seu patrimônio institucional e valores. O logo existente parecia desatualizado e não refletia sua abordagem educacional contemporânea."
+            "en": "",
+            "pt": ""
         },
         "solution": {
-            "en": "We developed a contemporary logo that honored the school's heritage while introducing a modern aesthetic. The new design incorporated symbolic elements and was versatile across all media.",
-            "pt": "Desenvolvemos um logo contemporâneo que honrou o patrimônio da escola enquanto introduzia uma estética moderna. O novo design incorporou elementos simbólicos e foi versátil em todos os meios de comunicação."
+            "en": "",
+            "pt": ""
         },
         "results": {
-            "en": "The new logo successfully modernized Liessin's brand identity and received enthusiastic reception from students, staff, and alumni. It has been implemented across all school materials.",
-            "pt": "O novo logo modernizou com sucesso a identidade da marca da Liessin e recebeu recepção entusiasta de alunos, funcionários e ex-alunos. Foi implementado em todos os materiais da escola."
+            "en": "",
+            "pt": ""
         },
         "feedback": {
-            "en": "\"The new logo perfectly captures who we are as a modern, forward-thinking institution. It's been wonderful working with Creative Kibbutz.\"",
-            "pt": "\"O novo logo captura perfeitamente quem somos como instituição moderna e inovadora. Foi maravilhoso trabalhar com a Creative Kibbutz.\""
+            "en": "",
+            "pt": ""
         }
     },
     {
         "id": 5,
-        "slug": "jcc-sports-dinner-social-media",
+        "slug": "5",
         "title": {
-            "en": "JCC - Sports Dinner Event Social Media",
-            "pt": "JCC - Mídia Social do Evento Sports Dinner"
+            "en": "RBC JCC Sports Dinner",
+            "pt": ""
         },
         "category": {
             "en": "Event Marketing",
-            "pt": "Event Marketing"
+            "pt": ""
         },
         "image": "/img/portfolio/jcc_sports_dinner.jpg",
         "description": {
-            "en": "Social media graphics and promotional materials for JCC's sports dinner fundraising event.",
-            "pt": "Gráficos de mídia social e materiais promocionais para o evento de jantar esportivo de arrecadação de fundos da JCC."
+            "en": "Design and social media activation for the JCC’s largest annual fundraising event, enhancing visibility and engagement.",
+            "pt": ""
         },
         "client": "JCC of Greater Vancouver",
         "aboutClient": {
-            "en": "JCC of Greater Vancouver is a vibrant community organization providing cultural, educational, and recreational programs for the Jewish community.",
-            "pt": "JCC de Greater Vancouver é uma organização comunitária vibrante que oferece programas culturais, educacionais e recreativos para a comunidade judaica."
+            "en": "",
+            "pt": ""
         },
         "problem": {
-            "en": "JCC needed to create buzz and drive ticket sales for their annual sports dinner fundraiser, an important community event and revenue generator.",
-            "pt": "JCC precisava criar interesse e impulsionar as vendas de ingressos para seu jantar esportivo anual de arrecadação de fundos, um evento comunitário importante e gerador de receita."
+            "en": "",
+            "pt": ""
         },
         "solution": {
-            "en": "We designed eye-catching social media graphics, created promotional videos, and developed a targeted social media campaign to maximize reach and ticket sales.",
-            "pt": "Projetamos gráficos de mídia social chamativo, criamos vídeos promocionais e desenvolvemos uma campanha de mídia social direcionada para maximizar o alcance e as vendas de ingressos."
+            "en": "",
+            "pt": ""
         },
         "results": {
-            "en": "Ticket sales exceeded previous years by 40%. Social media campaign reached over 10,000 people and generated significant event attendance.",
-            "pt": "As vendas de ingressos superaram os anos anteriores em 40%. A campanha de mídia social alcançou mais de 10.000 pessoas e gerou presença significativa no evento."
+            "en": "",
+            "pt": ""
         },
         "feedback": {
-            "en": "\"Creative Kibbutz's promotional work made a real difference in our ticket sales. Their creative approach was innovative and effective.\"",
-            "pt": "\"O trabalho promocional da Creative Kibbutz fez uma verdadeira diferença em nossas vendas de ingressos. Sua abordagem criativa foi inovadora e eficaz.\""
+            "en": "",
+            "pt": ""
         }
     },
     {
         "id": 6,
-        "slug": "liessin-advertisement-brochure",
+        "slug": "6",
         "title": {
-            "en": "Liessin High School - Advertisement and Brochure",
-            "pt": "Liessin High School - Publicidade e Brochura"
+            "en": "Advertisement and Brochure",
+            "pt": ""
         },
         "category": {
             "en": "Print Design & Advertising",
-            "pt": "Print Design & Advertising"
+            "pt": ""
         },
         "image": "/img/portfolio/liessin_ad_brochure.jpg",
         "description": {
-            "en": "Comprehensive advertising and brochure materials for Liessin High School's enrollment and brand promotion.",
-            "pt": "Materiais abrangentes de publicidade e brochura para inscrição e promoção de marca da Liessin High School."
+            "en": "Advertising materials and a promotional brochure created to support the launch of the school’s new campus.",
+            "pt": ""
         },
         "client": "Liessin High School",
         "aboutClient": {
-            "en": "Liessin High School is a prestigious Jewish educational institution committed to academic excellence and community values.",
-            "pt": "Liessin High School é uma instituição educacional judaica de prestígio comprometida com excelência acadêmica e valores comunitários."
+            "en": "",
+            "pt": ""
         },
         "problem": {
-            "en": "Liessin needed to attract new students and communicate their unique educational value proposition. They required cohesive advertising and informational materials for print and digital channels.",
-            "pt": "Liessin precisava atrair novos alunos e comunicar sua proposição de valor educacional única. Eles exigiam materiais de publicidade e informação coesos para canais impressos e digitais."
+            "en": "",
+            "pt": ""
         },
         "solution": {
-            "en": "We created a comprehensive advertising campaign with professional brochures, print ads, and digital materials that highlighted the school's academic excellence, community values, and student success stories.",
-            "pt": "Criamos uma campanha de publicidade abrangente com brochuras profissionais, anúncios impressos e materiais digitais que destacavam a excelência acadêmica da escola, valores comunitários e histórias de sucesso dos alunos."
+            "en": "",
+            "pt": ""
         },
         "results": {
-            "en": "The school experienced a 25% increase in applications and improved brand perception among prospective students and parents. The materials are now used for ongoing recruitment.",
-            "pt": "A escola experimentou um aumento de 25% nas inscrições e melhorou a percepção da marca entre os alunos em perspectiva e os pais. Os materiais agora são usados para recrutamento contínuo."
+            "en": "",
+            "pt": ""
         },
         "feedback": {
-            "en": "\"The brochure and ads showcase our school beautifully and have been instrumental in our recruitment efforts. We couldn't be more pleased.\"",
-            "pt": "\"A brochura e anúncios mostram nossa escola lindamente e foram instrumentais em nossos esforços de recrutamento. Não poderíamos estar mais satisfeitos.\""
+            "en": "",
+            "pt": ""
         }
     },
     {
         "id": 7,
-        "slug": "community-center-website-redesign",
+        "slug": "7",
         "title": {
-            "en": "Community Center - Website Redesign",
-            "pt": "Centro Comunitário - Redesign do Site"
+            "en": "Support Graphics & Event Brochure",
+            "pt": ""
         },
         "category": {
             "en": "Web Design",
-            "pt": "Web Design"
+            "pt": ""
         },
-        "image": "/img/portfolio/jcc_annual_campaign.jpg",
+        "image": "/img/portfolio/Juventude_transformando_com_arte.jpg", 
         "description": {
-            "en": "Complete website redesign for a community center focusing on user experience and modern aesthetics.",
-            "pt": "Redesign completo do site para um centro comunitário focando na experiência do usuário e estética moderna."
+            "en": "Support graphics and an event brochure for a national arts showcase celebrating youth led social transformation across Brazil.",
+            "pt": ""
         },
-        "client": "Vancouver Community Center",
+        "client": "CEPP (Center for the Study of Public Policies)",
         "aboutClient": {
-            "en": "Vancouver Community Center serves diverse populations with recreational and educational programs.",
-            "pt": "O Centro Comunitário de Vancouver atende populações diversas com programas recreativos e educacionais."
+            "en": "",
+            "pt": ""
         },
         "problem": {
-            "en": "The existing website was outdated, difficult to navigate, and didn't effectively showcase the center's programs and services.",
-            "pt": "O site existente estava desatualizado, difícil de navegar e não mostrava efetivamente os programas e serviços do centro."
+            "en": "",
+            "pt": ""
         },
         "solution": {
-            "en": "We designed and developed a modern, responsive website with intuitive navigation, online registration capabilities, and engaging content presentation.",
-            "pt": "Projetamos e desenvolvemos um site moderno e responsivo com navegação intuitiva, recursos de registro online e apresentação de conteúdo envolvente."
+            "en": "",
+            "pt": ""
         },
         "results": {
-            "en": "Website traffic increased by 200% and online registrations grew by 150%. User satisfaction improved significantly based on feedback surveys.",
-            "pt": "O tráfego do site aumentou em 200% e os registros online cresceram em 150%. A satisfação do usuário melhorou significativamente com base em pesquisas de feedback."
+            "en": "",
+            "pt": ""
         },
         "feedback": {
-            "en": "\"Our new website has transformed how we connect with our community. The design is beautiful and functional.\"",
-            "pt": "\"Nosso novo site transformou a forma como nos conectamos com nossa comunidade. O design é bonito e funcional.\""
+            "en": "",
+            "pt": ""
         }
     },
     {
         "id": 8,
-        "slug": "nonprofit-annual-report",
+        "slug": "8",
         "title": {
-            "en": "Non-Profit Annual Report Design",
-            "pt": "Design do Relatório Anual de ONG"
+            "en": "New Visual Identity",
+            "pt": ""
         },
         "category": {
             "en": "Print Design",
-            "pt": "Print Design"
+            "pt": ""
         },
-        "image": "/img/portfolio/lchaim_brochure.jpg",
+        "image": "/img/portfolio/camp_shalom.jpg",
         "description": {
-            "en": "Visually compelling annual report design showcasing impact and achievements for a non-profit organization.",
-            "pt": "Design de relatório anual visualmente atraente mostrando impacto e conquistas para uma organização sem fins lucrativos."
+            "en": "Complete visual identity redesign with applications for apparel, signage, social media, and newsletter templates.",
+            "pt": ""
         },
-        "client": "Hope Foundation",
+        "client": "Camp Shalom",
         "aboutClient": {
-            "en": "Hope Foundation is dedicated to supporting underprivileged communities through education and healthcare initiatives.",
-            "pt": "A Fundação Hope é dedicada a apoiar comunidades carentes através de iniciativas de educação e saúde."
+            "en": "",
+            "pt": ""
         },
         "problem": {
-            "en": "The organization needed to communicate their annual achievements, financial transparency, and impact stories to donors and stakeholders in an engaging format.",
-            "pt": "A organização precisava comunicar suas conquistas anuais, transparência financeira e histórias de impacto para doadores e partes interessadas em um formato envolvente."
+            "en": "",
+            "pt": ""
         },
         "solution": {
-            "en": "We designed a visually rich annual report with infographics, impactful photography, and clear data visualization that told their story compellingly.",
-            "pt": "Projetamos um relatório anual visualmente rico com infográficos, fotografia impactante e visualização clara de dados que contou sua história de forma convincente."
+            "en": "",
+            "pt": ""
         },
         "results": {
-            "en": "Donor engagement increased by 45% after report distribution. The report received praise for its clarity and visual appeal from board members and major donors.",
-            "pt": "O engajamento de doadores aumentou em 45% após a distribuição do relatório. O relatório recebeu elogios por sua clareza e apelo visual de membros do conselho e grandes doadores."
+            "en": "",
+            "pt": ""
         },
         "feedback": {
-            "en": "\"This annual report truly captures the heart of our mission. It's been our most effective communication tool with donors.\"",
-            "pt": "\"Este relatório anual realmente captura o coração de nossa missão. Foi nossa ferramenta de comunicação mais eficaz com doadores.\""
+            "en": "",
+            "pt": ""
         }
     },
     {
         "id": 9,
-        "slug": "charity-gala-event-materials",
+        "slug": "9",
         "title": {
-            "en": "Charity Gala - Event Materials",
-            "pt": "Gala Beneficente - Materiais do Evento"
+            "en": "Social Media",
+            "pt": ""
         },
         "category": {
             "en": "Event Marketing",
-            "pt": "Event Marketing"
+            "pt": ""
         },
-        "image": "/img/portfolio/jcc_sports_dinner.jpg",
+        "image": "/img/portfolio/jcc_social_media.jpg",
         "description": {
-            "en": "Complete event branding and materials package for a charity gala including invitations, programs, and signage.",
-            "pt": "Pacote completo de branding e materiais para um gala beneficente incluindo convites, programas e sinalização."
+            "en": "Social media strategy and content production including static posts and short videos designed to grow community connection and engagement.",
+            "pt": ""
         },
-        "client": "Children's Aid Society",
+        "client": "JCC of Greater Vancouver",
         "aboutClient": {
-            "en": "Children's Aid Society works to protect and support vulnerable children and families in the community.",
-            "pt": "A Sociedade de Auxílio à Criança trabalha para proteger e apoiar crianças e famílias vulneráveis na comunidade."
+            "en": "",
+            "pt": ""
         },
         "problem": {
-            "en": "The organization needed elegant, cohesive event materials that would create a memorable experience and encourage generous donations at their annual fundraising gala.",
-            "pt": "A organização precisava de materiais de evento elegantes e coesos que criassem uma experiência memorável e incentivassem doações generosas em seu gala anual de arrecadação de fundos."
+            "en": "",
+            "pt": ""
         },
         "solution": {
-            "en": "We developed a complete event branding package including save-the-dates, formal invitations, event programs, table signage, and digital displays that created a sophisticated atmosphere.",
-            "pt": "Desenvolvemos um pacote completo de branding para o evento incluindo save-the-dates, convites formais, programas do evento, sinalização de mesa e displays digitais que criaram uma atmosfera sofisticada."
+            "en": "",
+            "pt": ""
         },
         "results": {
-            "en": "The gala raised 60% more than the previous year. Attendees praised the professional presentation and cohesive design throughout the event.",
-            "pt": "O gala arrecadou 60% mais que o ano anterior. Os participantes elogiaram a apresentação profissional e o design coeso durante todo o evento."
+            "en": "",
+            "pt": ""
         },
         "feedback": {
-            "en": "\"Every detail was perfect. The materials set the tone for an incredible evening and helped us exceed our fundraising goals.\"",
-            "pt": "\"Cada detalhe foi perfeito. Os materiais definiram o tom para uma noite incrível e nos ajudaram a superar nossas metas de arrecadação.\""
+            "en": "",
+            "pt": ""
         }
     }
 ]

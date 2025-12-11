@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-primary text-primary-foreground py-16">
+    <footer class="bg-[#3350A3] text-primary-foreground py-16">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12">
                 <div class="flex flex-col items-center md:items-start gap-4">
@@ -9,24 +9,18 @@
                     </p>
                 </div>
 
-                <div>
-                    <h4 class="font-semibold mb-4 text-blue-50">Navigation</h4>
+                <div class="md:ml-auto">
+                    
                     <nav class="flex flex-col gap-1">
-                        <NuxtLink to="/" class="text-blue-200 hover:text-white transition-colors">Home</NuxtLink>
+                        
                         <a
-                            href="/#portfolio"
+                            href="https://www.instagram.com/creativekibbutz/"
                             @click.prevent="scrollToSection('portfolio')"
                             class="text-blue-200 hover:text-white transition-colors cursor-pointer"
                         >
-                            Portfolio
+                            <p class="font-semibold mb-4 text-blue-50">Follow us on Instagram</p>
                         </a>
-                        <a
-                            href="/#contact"
-                            @click.prevent="scrollToSection('homeContactRef')"
-                            class="text-blue-200 hover:text-white transition-colors cursor-pointer"
-                        >
-                            Contact
-                        </a>
+                
                     </nav>
                 </div>
 
@@ -146,27 +140,7 @@
                 class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-blue-200"
             >
                 <p>&copy; {{ new Date().getFullYear() }} Audacious Pixel INC. All rights reserved.</p>
-                <p class="flex items-center gap-1">
-                    Made with
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-heart h-3 w-3 text-secondary fill-secondary"
-                        aria-hidden="true"
-                    >
-                        <path
-                            d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"
-                        ></path>
-                    </svg>
-                    by Audacious Pixel INC
-                </p>
+                
             </div>
         </div>
     </footer>
